@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>PeP Toolbox Workshop</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+    <meta name="description" content="">
+    <meta name="author" content="I.Babuschkin, K. Dungs, I. Toijala">
+    <meta name="viewport" content="width=1024, user-scalable=no">
+
+    <!-- Style -->
+    <link href="deck.js/core/deck.core.css" rel="stylesheet">
+    <link href="deck.js/themes/style/mine2.css" rel="stylesheet">
+    <link href="deck.js/themes/transition/fade.css" rel="stylesheet">
+    <link href="deck.js/extensions/goto/deck.goto.css" rel="stylesheet">
+    <link href="deck.js/extensions/menu/deck.menu.css" rel="stylesheet">
+    <link href="deck.js/extensions/navigation/deck.navigation.css" rel="stylesheet">
+    <link href="deck.js/extensions/status/deck.status.css" rel="stylesheet">
+    <link href="deck.js/extensions/hash/deck.hash.css" rel="stylesheet">
+    <link href="deck.js/extensions/scale/deck.scale.css" rel="stylesheet">
+
+    <!-- Script -->
+    <script src="deck.js/modernizr.custom.js"></script>
+    <script src="deck.js/jquery-1.7.2.min.js"></script>
+    <script src="deck.js/core/deck.core.js"></script>
+    <script src="deck.js/extensions/hash/deck.hash.js"></script>
+    <script src="deck.js/extensions/menu/deck.menu.js"></script>
+    <script src="deck.js/extensions/goto/deck.goto.js"></script>
+    <script src="deck.js/extensions/status/deck.status.js"></script>
+    <script src="deck.js/extensions/navigation/deck.navigation.js"></script>
+    <script src="deck.js/extensions/scale/deck.scale.js"></script>
+    <script>
+        $(function() {
+            $.deck('.slide');
+        });
+    </script>
+
+</head>
+<body class="deck-container">
+
+    <!-- Slides -->
+    <section class="slide">
+        <h1>PeP Toolbox Workshop</h1>
+    </section>
+
+
+    <section class="slide">
+        <h2>Motivation</h2>
+        <ul>
+            <li>Einblick geben / Überblick verschaffen</li>
+            <li>Leute dazu bringen, mit ordentlichen Tools zu arbeiten.</li>
+            <li>Best practices von Beginn an!</li>
+            <li>Schokolade</li>
+        </ul>
+    </section>
+
+
+    <section class="slide">
+        <h2>Inhalte</h2>
+        <ul>
+            <li><strong>Best practices</strong></li>
+            <li>*nix Grundlagen <small>(Shell-Benutzung, -Scripting, SSH)</small></li>
+            <li>Programmieren <small>(Python, C++, Zusammenspiel)</small></li>
+            <li>Versionskontrolle <small>(Git)</small></li>
+            <li>LaTeX <small>(+Tikz, etc.)</small></li>
+            <li>Plotten <small>(Matplotlib, GnuPlot)</small></li>
+        </ul>
+    </section>
+
+
+    <section class="slide">
+        <h2>Vorgehen</h2>
+        <ol>
+            <li>Konzept ausarbeiten</li>
+            <li>"Testlauf" für die neuen Drittis</li>
+            <li>Konzept anpassen, erweitern</li>
+            <li>Möglich: Erster "richtiger" Workshop vor dem SoSe 2013</li>
+        </ol>
+    </section>
+
+
+    <section class="slide">
+        <h2>*nix Grundlagen</h2>
+        <h3>Shell</h3>
+        <ul>
+            <li>
+                <code>ls</code>,
+                <code>cp</code>,
+                <code>mv</code>,
+                <code>rm</code>,
+                <code>cd</code>, 
+                <code>mkdir</code>,
+                <code>pwd</code>,
+                <code>cat</code>,
+                <code>less</code>,
+                <code>grep</code>
+            </li>
+            <li>
+                ctrl-c,
+                ctrl-d
+            </li>
+            <li>Pipelines</li>
+        </ul>
+        <!-- Später
+        <h3>SSH</h3>
+        <ul>
+            <li>Verbindungen</li>
+            <li>SCP</li>
+        </ul>
+        -->
+    </section>
+
+
+    <section class="slide">
+        <h2>Versionskontrolle mit Git</h2>
+        <div class="right" style="width: 380px;">
+            <h3>Sinn und Zweck</h3>
+            <ul>
+                <li>Kollaboration</li>
+                <li>Versionskontrolle</li>
+            </ul>
+            <h3>Hoster</h3>
+            <ul>
+                <li>GitHub</li>
+                <li>Bitbucket</li>
+            </ul>
+        </div>
+        <h3>Befehle</h3>
+        <ul>
+            <li><code>init</code>, <code>clone</code></li>
+            <li><code>status</code>, <code>log</code></li>
+            <li><code>add</code>, <code>mv</code>, <code>rm</code></li>
+            <li><code>commit</code></li>
+            <li><code>push</code>, <code>pull</code></li>
+            <li><code>mergetool</code></li>
+        </ul>
+    </section>
+
+
+    <section class="slide">
+        <h2>Programmieren mit Python</h2>
+        <h3>Einstieg</h3>
+        <ul>
+            <li>Installation</li>
+            <li>Interpreter <small>(iPython)</small> &#8594; Grundlagen <small>(Arithmetik, Variablen, Syntax)</small></li>
+        </ul>
+        <h3>Keywords</h3>
+        <ul>
+            <li><code>()</code>, <code>[]</code>, <code>{}</code></li>
+            <li><code>if</code>, <code>else</code>, <code>elif</code></li>
+            <li><code>for</code>, <code>while</code></li>
+            <li><code>def</code> bzw. Funktionen allgemein</li>
+            <li><code>import</code>, <code>from</code>, <code>as</code></li>
+        </ul>
+    </section>
+
+
+    <section class="slide">
+        <h2>Programmieren mit Python</h2>
+        <h3>Bibliotheken</h3>
+        <ul>
+            <li>Numpy</li>
+            <li>Scipy</li>
+            <li>Matplotlib</li>
+            <li>Uncertainties</li>
+            <li><small>(Pylab)</small></li>
+        </ul>
+        <p>Verwendung von <strong>Beispielen</strong> aus der AP-Praxis.</p>
+    </section>
+
+
+    <section class="slide">
+        <h2>To Do / Ideen</h2>
+        <ul>
+            <li>Programmier"wettbewerb" am Ende?</li>
+            <li>Meinungsbild/Interesse</li>
+            <li>Spätestens zum dritten Semester</li>
+            <li>Zeitraum</li>
+            <li>Aufgaben für "Hands On"</li>
+            <li>Outline/Struktur</li>
+            <li>Lehrmaterialsammlung <small>(Website)</small></li>
+            <li>Fertige VM</li>
+        </ul>
+    </section>
+
+
+    <section class="last slide">
+        <h2>Vielen Dank für die Aufmerksamkeit!</h2>
+        <img src="img/puffins.jpg" width="550" alt="Puffins">
+    </section>
+    <!-- /Slides -->
+
+    <!-- Extensions -->
+    <!--
+    <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+    <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    -->
+
+    <p class="deck-status">
+        <span class="deck-status-current"></span>
+        /
+        <span class="deck-status-total"></span>
+    </p>
+
+    <form action="." method="get" class="goto-form">
+        <label for="goto-slide">Go to slide:</label>
+        <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+        <datalist id="goto-datalist"></datalist>
+        <input type="submit" value="Go">
+    </form>
+    
+    <a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+    <!-- /Extensions -->
+
+    <footer class="foot">
+        <p>
+            I. Babuschkin, K.Dungs, I. Toijala
+            <small>PeP et al. Sommerakademie 2012</small>
+        </p>
+    </footer>
+</body>
+</html>

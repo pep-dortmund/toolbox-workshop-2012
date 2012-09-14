@@ -1,0 +1,238 @@
+% Font
+\usepackage{lmodern}
+%\usepackage{fourier}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+% Language
+\usepackage[ngerman]{babel}
+
+% Layout
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headsep}{32pt}
+\renewcommand{\headheight}{42pt}
+\usepackage[margin=10pt,font=small,labelfont=bf]{caption}
+\usepackage{soulutf8}
+
+% Tables
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{float}
+
+% Color (mostly needed for code listings)
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% Graphics
+\usepackage{graphicx}
+
+% Literature
+%\usepackage[style=numeric,backend=biber]{biblatex}
+%\usepackage[notbib]{tocbibind}
+%\addbibresource{../literature.bib}
+
+% Units
+\usepackage{siunitx}
+\sisetup{
+    locale=DE,
+    separate-uncertainty=true,
+    per-mode=fraction
+}
+
+% References
+\usepackage{varioref}
+\usepackage[breaklinks]{hyperref}
+\usepackage{hypdvips}
+\AtBeginDocument{\renewcommand{\subsectionautorefname}{Abschnitt}}
+\AtBeginDocument{\renewcommand{\subsubsectionautorefname}{Abschnitt}}
+
+% URLs
+\usepackage{url}
+\urlstyle{tt}
+
+% Maths
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage{amstext}
+\usepackage{tensor}
+% Sets
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\C}{\mathbb{C}}
+% Identity
+\newcommand{\E}{\mathbb{1}}
+% Special numbers
+\renewcommand{\i}{\mathbf{i}}
+\newcommand{\e}{\mathbf{e} }
+\newcommand{\enull}{\varepsilon_0}
+% Special Symbols
+\newcommand{\lagrange}{\mathcal{L}}
+\newcommand{\landau}{\mathcal{O}}
+% Operators
+\newcommand{\diff}{\mathrm{d}}
+\newcommand{\laplace}{\; \mathbf{\Delta}}
+\newcommand{\rot}{\; \mathrm{rot} \,}
+\newcommand{\grad}{\; \mathrm{grad} \,}
+\newcommand{\dive}{\; \mathrm{div} \,}
+\renewcommand{\Re}{\; \mathrm{Re} \,}
+\renewcommand{\Im}{\; \mathrm{Im} \,}
+% Trigonometry
+\newcommand{\cotanh}{\; \mathrm{cotanh} \,}
+\newcommand{\asinh}{\; \mathrm{areasinh} \,}
+\newcommand{\acosh}{\; \mathrm{areacosh} \,}
+\newcommand{\atanh}{\; \mathrm{areatanh} \,}
+\newcommand{\acoth}{\; \mathrm{areacoth} \,}
+% Absolute and Norm
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+% Mean values and standard deviation
+\newcommand{\mean}[1]{\langle #1 \rangle}
+\newcommand{\std}[1]{\sigma_{#1}}
+% Shortcut for sums
+\newcommand{\sumi}[1]{\sum\limits_{#1 = 0}^{\infty}}
+\newcommand{\sumk}[2]{\sum\limits_{#1}^{#2}}
+% Shortcut for limes
+\newcommand{\limi}[1]{\lim\limits_{#1\rightarrow\infty}}
+% Shortcut for integrals
+\newcommand{\inti}{\int\limits_{-\infty}^\infty}
+\newcommand{\intx}[2]{\int\limits_{#1}^{#2}}
+% Shortcut for derivatives
+\newcommand{\deriv}[2]{\frac{\diff #1}{\diff #2}}
+\newcommand{\derivsq}[2]{\frac{\diff^2 #1}{\diff #2^2}}
+\newcommand{\partderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\partderivsq}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+% Dirac braket notation
+\newcommand{\bra}[1]{\langle #1 \mid}
+\newcommand{\ket}[1]{\mid #1 \rangle}
+\newcommand{\braket}[2]{\langle #1 \mid #2 \rangle}
+% Miscellaneous
+\newcommand{\qed}{\hfill $\square$\\}
+\newcommand{\me}{\overset{!}{=}}
+
+% Equations
+\usepackage{IEEEtrantools}
+\newenvironment{eqn}{\begin{IEEEeqnarray}{c}}{\end{IEEEeqnarray}}
+\newenvironment{eqn*}{\begin{IEEEeqnarray*}{c}}{\end{IEEEeqnarray*}}
+\newenvironment{eqns}[1]{\begin{IEEEeqnarray}{#1}}{\end{IEEEeqnarray}}
+\newenvironment{eqns*}[1]{\begin{IEEEeqnarray*}{#1}}{\end{IEEEeqnarray*}}
+\IEEEeqnarraydefcolsep{0}{\leftmargini} % for well-aligned text in equation arrays %
+
+% Code listings
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{setspace}
+\renewcommand{\lstlistlistingname}{Code Listings}
+\renewcommand{\lstlistingname}{Code Listing}
+% Python
+\lstnewenvironment{python}[1][]{
+    \lstset{
+        language=python,
+        extendedchars=false,
+        tabsize=2,
+        breaklines=true,
+        captionpos=t,
+        frame=tb,
+        framerule=.2pt,
+        basicstyle=\ttfamily\small\setstretch{.5},
+        stringstyle=\color{BrickRed},
+        showstringspaces=false,
+        alsoletter={1234567890},
+        otherkeywords={\ , \}, \{},
+        keywordstyle=\color{BurntOrange},
+        emph={access,and,break,class,continue,def,del,elif,else,except,exec,finally,for,from,global,if,import,in,is,lambda,not,or,pass,print,raise,return,try,while},
+        emphstyle=\color{RoyalBlue},
+        emph={[2]True, False, None, self},
+        emphstyle=[2]\color{YellowGreen},
+        emph={[3]from, import, as},
+        emphstyle=[3]\color{BurntOrange},
+        upquote=true,
+        morecomment=[s]{"""}{"""},
+        commentstyle=\color{Gray}\slshape,
+        emph={[4]1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
+        emphstyle=[4]\color{YellowGreen},
+        literate=*{:}{{\textcolor{BurntOrange}:}}{1}%
+        {=}{{\textcolor{BurntOrange}=}}{1}%
+        {-}{{\textcolor{BurntOrange}-}}{1}%
+        {+}{{\textcolor{BurntOrange}+}}{1}%
+        {*}{{\textcolor{BurntOrange}*}}{1}%
+        {!}{{\textcolor{BurntOrange}!}}{1}%
+        {(}{{\textcolor{BurntOrange}(}}{1}%        
+        {)}{{\textcolor{BurntOrange})}}{1}%
+        {[}{{\textcolor{BurntOrange}[}}{1}%
+        {]}{{\textcolor{BurntOrange}]}}{1}%
+        {<}{{\textcolor{BurntOrange}<}}{1}%
+        {>}{{\textcolor{BurntOrange}>}}{1},%
+        #1
+    }
+}{}
+
+% Abbreviations for repeated commands
+\newcommand{\img}[4]{
+    \begin{figure}[H]
+        \begin{center}
+            \caption{#4}
+            \includegraphics[width=#1]{#2}
+            \label{#3}
+        \end{center}
+    \end{figure}
+}
+
+\newcommand{\mytitle}[1]{
+    % Fancy headlines
+    \pagestyle{fancy}
+    \fancyhead[RE]{\textit{\nouppercase{\leftmark}}}
+    \fancyhead[LO]{\textit{\nouppercase{\rightmark}}}
+    \fancyfoot[LE,RO]{\thepage}
+    \cfoot{}
+    % PDF Information
+    \hypersetup{
+        pdfsubject={PeP et al. Toolbox Workshop},
+        pdftitle={Toolbox Workshop},
+        pdfauthor={Igor Babuschkin, Kevin Dungs, Ismo Toijala},
+    }
+
+    \begin{titlepage}
+        \begin{center}
+                \Huge\color{Red}{\textbf{DRAFT}}
+            \end{center}
+
+        \begin{flushright}
+            \rule{\linewidth}{1.625mm} \\[1cm]
+            
+            \Large
+                \textbf{PeP et al.} \\[0.3125cm]
+            \normalsize
+
+            \Huge
+                \textbf{Toolbox Workshop}
+            \normalsize \\[1.625cm]
+        
+            \Large
+                TU Dortmund
+            \normalsize \\
+            #1 \\[.3125cm]
+            
+            \rule{\linewidth}{0.625mm} \\ [.3125cm]
+
+            \begin{minipage}[t]{0.3\textwidth}\begin{flushright}
+                \large Igor Babuschkin \\
+                \small \href{mailto:igor.babuschkin@udo.edu}{igor.babuschkin@udo.edu}
+            \end{flushright}\end{minipage}
+            \begin{minipage}[t]{0.3\textwidth}\begin{flushright}
+                \large Kevin Dungs \\
+                \small \href{mailto:kevin.dungs@udo.edu}{kevin.dungs@udo.edu}
+            \end{flushright}\end{minipage}
+            \begin{minipage}[t]{0.3\textwidth}\begin{flushright}
+                \large Ismo Toijala \\
+                \small \href{mailto:ismo.toijala@udo.edu}{ismo.toijala@udo.edu}
+            \end{flushright}\end{minipage}
+
+        \end{flushright}
+    \end{titlepage}
+}
