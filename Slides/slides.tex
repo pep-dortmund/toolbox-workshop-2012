@@ -22,12 +22,18 @@
 \usetheme{TU}
 
 \begin{document}
+
+{
+  \setbeamertemplate{footline}{}
   \begin{frame}
     \titlepage
   \end{frame}
-  \begin{frame}
+}
+
+  \begin{frame}{Inhalt}
     \tableofcontents
   \end{frame}
+
   \section{Unix Shell}
     \subsection{Allgemeines}
       \begin{frame}
@@ -45,51 +51,74 @@
           \node (argument) [draw,rectangle] at (4.5,1) {Argument};
         \end{tikzpicture}
       \end{frame}
+
       \begin{frame}{Allgemeines}
-        pipes\\
-        ctrl-c\\
-        ctrl-d\\
-        .., .\\
-        >, >>, <\\
-        glob (*, ...)
+        \begin{itemize}
+          \item pipes\\
+          \item ctrl-c\\
+          \item ctrl-d\\
+          \item .., .\\
+          \item >, >>, <\\
+          \item glob (*, ...)
+        \end{itemize}
       \end{frame}
+
     \subsection{Befehle}
       \begin{frame}{man}
       \end{frame}
+
       \begin{frame}{cd, mkdir, pwd}
-        mkdir -p
+        \begin{itemize}
+          \item mkdir -p
+        \end{itemize}
       \end{frame}
+
       \begin{frame}{ls}
-        ls -l\\
-        ls -a\\
-        ls -R
+        \begin{itemize}
+          \item ls -l\\
+          \item ls -a\\
+          \item ls -R
+        \end{itemize}
       \end{frame}
+
       \begin{frame}{cp, mv, rm}
-        cp -r\\
-        rm -r\\
-        rm -f
+        \begin{itemize}
+          \item cp -r\\
+          \item rm -r\\
+          \item rm -f
+        \end{itemize}
       \end{frame}
+
       \begin{frame}{cat, less}
       \end{frame}
+
       \begin{frame}{grep}
       \end{frame}
+
   \section{git}
     \subsection{Allgemeines}
       \begin{frame}{warum}
       \end{frame}
+
       \begin{frame}{hoster}
       \end{frame}
+
     \subsection{Befehle}
       \begin{frame}{init, clone}
       \end{frame}
+
       \begin{frame}{status, log}
       \end{frame}
+
       \begin{frame}{add, mv, rm}
       \end{frame}
+      
       \begin{frame}{commit}
       \end{frame}
+      
       \begin{frame}{push, pull}
       \end{frame}
+      
       \begin{frame}{mergetool}
       \end{frame}
   \section{Python}
@@ -98,27 +127,38 @@
     \subsection{Sprache}
       \begin{frame}{ipython}
       \end{frame}
+      
       \begin{frame}{variablen, operatoren}
       \end{frame}
+      
       \begin{frame}{(), [], \{\}}
       \end{frame}
+      
       \begin{frame}{if, elif, else}
       \end{frame}
+      
       \begin{frame}{for, while}
       \end{frame}
-      \begin{frame}{def, funktionsaufruf}
+      
+      \begin{frame}{def, Funktionsaufrufe}
       \end{frame}
+      
       \begin{frame}{import, from, as}
       \end{frame}
+    
     \subsection{Bibliotheken}
       \begin{frame}{numpy}
       \end{frame}
+      
       \begin{frame}{scipy}
       \end{frame}
+      
       \begin{frame}{matplotlib}
       \end{frame}
+      
       \begin{frame}{uncertainties}
       \end{frame}
+      
       \begin{frame}{pylab}
       \end{frame}
 \end{document}
