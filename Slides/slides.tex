@@ -87,8 +87,8 @@
 
       \begin{frame}{\texttt{pwd}, \texttt{cd}}
         \begin{itemize}
-          \item \texttt{pwd}: zeigt das aktuelle Verzeichnis
-          \item \texttt{cd}: wechselt in das angegebene Verzeichnis
+          \item \texttt{pwd} für print working directory: zeigt das aktuelle Verzeichnis
+          \item \texttt{cd} für change directory: wechselt in das angegebene Verzeichnis
           \item Beispiel:\\
             \texttt{\$ pwd\\
                     /home/ismo\\
@@ -96,20 +96,40 @@
                     \$ pwd\\
                     /etc\\
                     \$ cd \textasciitilde\\
-                    \$ pwd
+                    \$ pwd\\
                     /home/ismo}
         \end{itemize}
       \end{frame}
 
-      \begin{frame}{\texttt{mkdir}}
-      \end{frame}
-
       \begin{frame}{ls}
         \begin{itemize}
-          \item ls -l\\
-          \item ls -a\\
-          \item ls -R
+          \item \texttt{ls} für list: zeigt den Inhalt eines Verzeichnisses an
+          \item \texttt{ls -l}: zeigt mehr Informationen über Dateien und Verzeichnisse
+          \item \texttt{ls -a}: zeigt auch versteckte Dateien
+          \item \texttt{ls -R}: zeigt auch den Inhalt von Unterordnern
+          \item alle Optionen können kombiniert werden
         \end{itemize}
+      \end{frame}
+
+      \begin{frame}
+        Beispiel:\\
+        \texttt{\$ ls\\
+                a/  b\\
+                \$ ls -l\\
+                total 4.0K\\
+                drwxr-xr-x 2 ismo users 4.0K Sep 15 19:52 a/\\
+                -rw-r--r-- 1 ismo users \ \ \ 0 Sep 15 19:52 b\\
+                \$ ls -a\\
+                ./  ../  a/  b\\
+                \$ ls -R\\
+                .:\\
+                a/  b\\
+                ~\\
+                ./a:\\
+                c}
+      \end{frame}
+
+      \begin{frame}{\texttt{mkdir}}
       \end{frame}
 
       \begin{frame}{cp, mv, rm}
