@@ -3,6 +3,10 @@
 \usepackage{fontspec}
 \hypersetup{unicode=true}
 
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+
 \title{Toolbox Workshop}
 \author{Igor Babuschkin \and Kevin Dungs \and Christian Gerhorst \and Peter Lorenz \and Ismo Toijala}
 \institute{PeP et al. e.V.}
@@ -18,19 +22,97 @@
   \begin{frame}
     \tableofcontents
   \end{frame}
-  \section{*nix}
-    \begin{frame}
-    \end{frame}
+  \section{Unix Shell}
+    \subsection{Allgemeines}
+      \begin{frame}
+        \begin{tikzpicture}
+          \node (text) [inner sep=0mm,outer sep=0mm,anchor=west,align=left] at (0,0) {\texttt{> ls -l --all \textit{directory}}\\
+                                                                                      \texttt{\textit{output}}\\
+                                                                                      \texttt{> }};
+          \node (prompt) [left=5mm,draw,rectangle] at (text.west) {Prompt};
+          \draw [->] (prompt.east) to ($(text.north west) - (0.1,0.1)$);
+          \draw [->] (prompt.east) to ($(text.south west) - (0.1,-0.1)$);
+          \node (command) [anchor=south,draw,rectangle] at ($(text.north west) + (0.6,0.5)$) {Befehl};
+          \draw [->] (command.south) to ($(text.north west) + (0.6,0)$);
+          \node (short) [draw,rectangle] at (2.5,1) {kurze Option};
+          \node (long) [draw,rectangle] at (3.5,1) {lange Option};
+          \node (argument) [draw,rectangle] at (4.5,1) {Argument};
+        \end{tikzpicture}
+      \end{frame}
+      \begin{frame}{Allgemeines}
+        pipes\\
+        ctrl-c\\
+        ctrl-d\\
+        .., .\\
+        >, >>, <\\
+        glob (*, ...)
+      \end{frame}
+    \subsection{Befehle}
+      \begin{frame}{man}
+      \end{frame}
+      \begin{frame}{cd, mkdir, pwd}
+        mkdir -p
+      \end{frame}
+      \begin{frame}{ls}
+        ls -l\\
+        ls -a\\
+        ls -R
+      \end{frame}
+      \begin{frame}{cp, mv, rm}
+        cp -r\\
+        rm -r\\
+        rm -f
+      \end{frame}
+      \begin{frame}{cat, less}
+      \end{frame}
+      \begin{frame}{grep}
+      \end{frame}
   \section{git}
-    \begin{frame}
-    \end{frame}
+    \subsection{Allgemeines}
+      \begin{frame}{warum}
+      \end{frame}
+      \begin{frame}{hoster}
+      \end{frame}
+    \subsection{Befehle}
+      \begin{frame}{init, clone}
+      \end{frame}
+      \begin{frame}{status, log}
+      \end{frame}
+      \begin{frame}{add, mv, rm}
+      \end{frame}
+      \begin{frame}{commit}
+      \end{frame}
+      \begin{frame}{push, pull}
+      \end{frame}
+      \begin{frame}{mergetool}
+      \end{frame}
   \section{Python}
     \begin{frame}
     \end{frame}
     \subsection{Sprache}
-      \begin{frame}
+      \begin{frame}{ipython}
+      \end{frame}
+      \begin{frame}{variablen, operatoren}
+      \end{frame}
+      \begin{frame}{(), [], \{\}}
+      \end{frame}
+      \begin{frame}{if, elif, else}
+      \end{frame}
+      \begin{frame}{for, while}
+      \end{frame}
+      \begin{frame}{def, funktionsaufruf}
+      \end{frame}
+      \begin{frame}{import, from, as}
       \end{frame}
     \subsection{Bibliotheken}
-      \begin{frame}
+      \begin{frame}{numpy}
+      \end{frame}
+      \begin{frame}{scipy}
+      \end{frame}
+      \begin{frame}{matplotlib}
+      \end{frame}
+      \begin{frame}{uncertainties}
+      \end{frame}
+      \begin{frame}{pylab}
       \end{frame}
 \end{document}
