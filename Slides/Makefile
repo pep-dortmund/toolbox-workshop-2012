@@ -1,5 +1,5 @@
 
-slides.pdf: slides.tex
+slides.pdf: slides.tex beamerthemeTU.sty
 	lualatex slides.tex
 	lualatex slides.tex
 

@@ -6,10 +6,11 @@
 % Version: 0.1 2012-09-15
 %
 
-\usepackage{tgadventor}
-\usepackage[T1]{fontenc}
 \usepackage{xcolor}
-
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Adventor}
+\setsansfont{TeX Gyre Adventor}
+\setmonofont{Latin Modern Mono}
 
 % Colors
 \definecolor{TUgreen}{HTML}{649600}
@@ -35,7 +36,7 @@
 \setbeamercolor{institute}{fg=PeP}
 
 % Frametitle
-\setbeamerfont{frametitle}{size=\Huge}
+\setbeamerfont{frametitle}{size=\Large}
 \setbeamercolor{frametitle}{fg=white, bg=TUgreen}
 
 % Framesubtitle
@@ -78,13 +79,13 @@
 \defbeamertemplate*{footline}{TU}
 {
     \leavevmode%
-    \begin{beamercolorbox}[wd=.1\paperwidth, ht=1.8em, dp=1em, left, leftskip=1em]{}%
+    \begin{beamercolorbox}[wd=.2\paperwidth, ht=1.8em, dp=1em, left, leftskip=1em]{}%
         \textbf{\insertshorttitle}
     \end{beamercolorbox}%
-    \begin{beamercolorbox}[wd=.8\paperwidth, ht=1.8em, dp=1em, center]{}%
+    \begin{beamercolorbox}[wd=.6\paperwidth, ht=1.8em, dp=1em, center]{}%
         \insertshortauthor\quad(\insertshortinstitute)%
     \end{beamercolorbox}%
-    \begin{beamercolorbox}[wd=.1\paperwidth, ht=1.8em, dp=1em, right, rightskip=1em]{}%
+    \begin{beamercolorbox}[wd=.2\paperwidth, ht=1.8em, dp=1em, right, rightskip=1em]{}%
         \insertpagenumber{} / \inserttotalframenumber%
     \end{beamercolorbox}%
 }
