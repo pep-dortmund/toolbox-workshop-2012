@@ -10,7 +10,7 @@
 \title{Toolbox Workshop}
 \subtitle{Nützliche Programme für Physikstudenten}
 \author[Igor B.\and Kevin D.\and Christian G.\and Peter L.\and Ismo T.]{
-  Igor Babuschkin%\thanks{\href{mailto:igor.babuschkin@udo.edu}{igor.babuschkin@udo.edu}}
+       Igor Babuschkin%\thanks{\href{mailto:igor.babuschkin@udo.edu}{igor.babuschkin@udo.edu}}
   \and Kevin Dungs%\thanks{\href{mailto:kevin.dungs@udo.edu}{kevin.dungs@udo.edu}}
   \and Christian Gerhorst%\thanks{\href{mailto:christiangerhorst@gmail.com}{christiangerhorst@gmail.com}}
   \and Peter Lorenz%\thanks{\href{mailto:peter.lorenz@udo.edu}{peter.lorenz@udo.edu}}
@@ -41,21 +41,22 @@
           \item Pfade können absolut (beginnend mit \texttt{/}) oder relativ zum aktuellen Ordner angegeben werden
           \item drei spezielle Ordner:
             \begin{itemize}
-              \item \texttt{.} der aktuelle Ordner (oder der aktuelle im bisherigen Pfad, \texttt{a/./} = \texttt{a/})
-              \item \texttt{..} der Oberordner des aktuellen Ordners (\texttt{a/b/../} = \texttt{a/})
-              \item \texttt{\textasciitilde} das Heimverzeichnis
+              \item \texttt{.} der aktuelle Ordner (oder der aktuelle im bisherigen Pfad, \texttt{a/./}~=~\texttt{a/})
+              \item \texttt{..} der Oberordner des aktuellen Ordners (\texttt{a/b/../}~=~\texttt{a/})
+              \item \texttt{\textasciitilde} das Heimverzeichnis (nur am Anfang eines Pfads)
             \end{itemize}
           \item Dateien, die mit \texttt{.} anfangen sind versteckt (z.B. \texttt{\textasciitilde/.vimrc})
         \end{itemize}
       \end{frame}
-      \begin{frame}
-        \texttt{> ls -l --all \textit{directory}\\
-             \textit{output}\\
-             >}
+
+      \begin{frame}{Aufbau einer Eingabe}
+        \texttt{\$ ls -l --all \textit{directory}\\
+                \textit{output}\\
+                \$}
         \begin{center}
           \begin{tabular}{>{\tt}l l}
             \toprule
-            >                  & Prompt       \\
+            \$                 & Prompt       \\
             ls                 & Befehl       \\
             -l                 & kurze Option \\
             --all              & lange Option \\
@@ -66,25 +67,41 @@
         \end{center}
       \end{frame}
 
-      \begin{frame}{Allgemeines}
+      \begin{frame}
         \begin{itemize}
-          \item pipes\\
-          \item ctrl-c\\
-          \item ctrl-d\\
-          \item .., .\\
-          \item >, >>, <\\
-          \item glob (*, ...)
+          \item \texttt{\$} ist nur ein Beispiel für einen Prompt, häufig wird das aktuelle Verzeichnis und/oder andere Informationen angezeigt
+          \item kurze Optionen können zusammengefasst werden (\texttt{ls~-la} = \texttt{ls -l -a} = \texttt{ls -l --all})
+          \item die Reihenfolge der Optionen ist egal
+          \item meistens werden mehrere Argumente (z.B. Dateien) akzeptiert
         \end{itemize}
       \end{frame}
 
     \subsection{Befehle}
-      \begin{frame}{man}
+      \begin{frame}{\texttt{man}}
+        \begin{itemize}
+          \item \texttt{man} für manual
+          \item zeigt die Hilfe für ein Programm
+          \item Beispiel: \texttt{man man}
+        \end{itemize}
       \end{frame}
 
-      \begin{frame}{cd, mkdir, pwd}
+      \begin{frame}{\texttt{pwd}, \texttt{cd}}
         \begin{itemize}
-          \item mkdir -p
+          \item \texttt{pwd}: zeigt das aktuelle Verzeichnis
+          \item \texttt{cd}: wechselt in das angegebene Verzeichnis
+          \item Beispiel:\\
+            \texttt{\$ pwd\\
+                    /home/ismo\\
+                    \$ cd ../../etc\\
+                    \$ pwd\\
+                    /etc\\
+                    \$ cd \textasciitilde\\
+                    \$ pwd
+                    /home/ismo}
         \end{itemize}
+      \end{frame}
+
+      \begin{frame}{\texttt{mkdir}}
       \end{frame}
 
       \begin{frame}{ls}
@@ -107,6 +124,17 @@
       \end{frame}
 
       \begin{frame}{grep}
+      \end{frame}
+
+      \begin{frame}{Allgemeines}
+        \begin{itemize}
+          \item pipes\\
+          \item ctrl-c\\
+          \item ctrl-d\\
+          \item .., .\\
+          \item >, >>, <\\
+          \item glob (*, ...)
+        \end{itemize}
       \end{frame}
 
   \section{git}
