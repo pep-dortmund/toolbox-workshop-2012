@@ -3,9 +3,16 @@
 \usepackage{fontspec}
 \hypersetup{unicode=true,pdfcreator={},pdfproducer={}}
 
+\setmainfont{Latin Modern Sans}
+\setsansfont{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
+
 \usepackage{tikz}
 \usetikzlibrary{positioning}
 \usetikzlibrary{calc}
+
+\usepackage{booktabs}
+\usepackage{array}
 
 \title{Toolbox Workshop}
 \subtitle{Nützliche Programme für Physikstudenten}
@@ -36,20 +43,37 @@
 
   \section{Unix Shell}
     \subsection{Allgemeines}
+      \begin{frame}{Dateisystem}
+        \begin{itemize}
+          \item \texttt{/} trennt Teile eines Pfads (Ordner und Dateien) (Windows: \texttt{\textbackslash})
+          \item Das gesamte Dateisystem bildet \emph{einen} Baum, beginnend mit \texttt{/}
+          \item Es gibt immer einen aktuellen Ordner (working directory)
+          \item Pfade können absolut (beginnend mit \texttt{/}) oder relativ zum aktuellen Ordner angegeben werden
+          \item drei spezielle Ordner:
+            \begin{itemize}
+              \item \texttt{.} der aktuelle Ordner (oder der aktuelle im bisherigen Pfad, \texttt{a/./} = \texttt{a/})
+              \item \texttt{..} der Oberordner des aktuellen Ordners (\texttt{a/b/../} = \texttt{a/})
+              \item \texttt{\textasciitilde} das Heimverzeichnis
+            \end{itemize}
+          \item Dateien, die mit \texttt{.} anfangen sind versteckt (z.B. \texttt{\textasciitilde/.vimrc})
+        \end{itemize}
+      \end{frame}
       \begin{frame}
-        \begin{tikzpicture}
-          \node (text) [inner sep=0mm,outer sep=0mm,anchor=west,align=left] at (0,0) {\texttt{> ls -l --all \textit{directory}}\\
-                                                                                      \texttt{\textit{output}}\\
-                                                                                      \texttt{> }};
-          \node (prompt) [left=5mm,draw,rectangle] at (text.west) {Prompt};
-          \draw [->] (prompt.east) to ($(text.north west) - (0.1,0.1)$);
-          \draw [->] (prompt.east) to ($(text.south west) - (0.1,-0.1)$);
-          \node (command) [anchor=south,draw,rectangle] at ($(text.north west) + (0.6,0.5)$) {Befehl};
-          \draw [->] (command.south) to ($(text.north west) + (0.6,0)$);
-          \node (short) [draw,rectangle] at (2.5,1) {kurze Option};
-          \node (long) [draw,rectangle] at (3.5,1) {lange Option};
-          \node (argument) [draw,rectangle] at (4.5,1) {Argument};
-        \end{tikzpicture}
+        \texttt{> ls -l --all \textit{directory}\\
+             \textit{output}\\
+             >}
+        \begin{center}
+          \begin{tabular}{>{\tt}l l}
+            \toprule
+            >                  & Prompt       \\
+            ls                 & Befehl       \\
+            -l                 & kurze Option \\
+            --all              & lange Option \\
+            \textit{directory} & Argument     \\
+            \textit{output}    & Ausgabe      \\
+            \bottomrule
+          \end{tabular}
+        \end{center}
       \end{frame}
 
       \begin{frame}{Allgemeines}
