@@ -1,10 +1,10 @@
 
-vortrag.pdf: vortrag.tex
-	lualatex vortrag.tex
-	lualatex vortrag.tex
+slides.pdf: slides.tex
+	lualatex slides.tex
+	lualatex slides.tex
 
-show: vortrag.pdf
-	mimeopen vortrag.pdf
+show: slides.pdf
+	mimeopen slides.pdf
 
 clean:
 	rm -rf *.log
@@ -13,4 +13,4 @@ clean:
 	rm -rf *.snm
 	rm -rf *.aux
 	rm -rf *.nav
-	rm -rf vortrag.pdf
+	rm -rf slides.pdf
