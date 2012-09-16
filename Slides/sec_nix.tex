@@ -121,11 +121,17 @@
               ./b/c:}
     \end{frame}
 
-    \begin{frame}{cp, mv, rm}
+    \begin{frame}{\texttt{cp}, \texttt{mv}, \texttt{rm}, \texttt{rmdir}}
       \begin{itemize}
-        \item cp -r\\
-        \item rm -r\\
-        \item rm -f
+        \item \texttt{cp \textit{source} \textit{destination}} für copy: kopiert eine Datei
+        \item \texttt{cp -r \textit{source} \textit{destination}}: kopiert ein Verzeichnis rekursiv
+        \item das Ziel kann ein Verzeichnis oder der exakte Pfad sein
+        \item \texttt{mv \textit{source} \textit{destination}} für move: verschiebt order benennt eine Datei um
+        \item Ziel kann wir bei \texttt{cp} sein
+        \item \texttt{rm \textit{file}} für remove: löscht eine Datei
+        \item \texttt{rm -r \textit{file}}: löscht ein Verzeichnis rekursiv
+        \item \texttt{rmdir \textit{directory}} für remove directory: löscht ein leeres Verzeichnis
+        \item \texttt{rm -r} kann statt \texttt{rmdir} verwendet werden
       \end{itemize}
     \end{frame}
 
