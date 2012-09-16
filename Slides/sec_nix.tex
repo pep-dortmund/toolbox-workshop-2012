@@ -1,5 +1,10 @@
 \section{Unix Shell}
-  \subsection{Allgemeines}
+  \begin{frame}{Unix Shell}
+    \tableofcontents[sectionstyle=show/hide,
+                     hideothersubsections]
+  \end{frame}
+
+  \subsection{Dateisystem}
     \begin{frame}{Dateisystem}
       \begin{itemize}
         \item \texttt{/} trennt Teile eines Pfads (Verzeichnisse und Dateien) (Windows: \texttt{\textbackslash})
@@ -16,6 +21,7 @@
       \end{itemize}
     \end{frame}
 
+  \subsection{Aufbau einer Eingabe}
     \begin{frame}{Aufbau einer Eingabe}
       \texttt{\$ ls -l --all \textit{directory}\\
               \textit{output}\\
@@ -152,16 +158,18 @@
               c}
     \end{frame}
 
-    \begin{frame}{\texttt{cat}, \texttt{less}, \texttt{grep}}
+    \begin{frame}{\texttt{cat}, \texttt{less}, \texttt{grep}, \texttt{echo}}
       \begin{itemize}
         \item \texttt{cat [\textit{file}]} für concatenate: gibt den Inhalt einer (oder mehr) Dateien aus
         \item \texttt{less [\textit{file}]} (besser als \texttt{more}): zeigt eine Datei in einer navigablen Form an
         \item \texttt{grep \textit{pattern} [\textit{file}]} für ???: sucht nach einem Muster
         \item \texttt{grep -i \textit{pattern} [\textit{file}]}: ignoriert Groß- und Kleinschreibung
         \item \texttt{grep -r \textit{pattern} \textit{directory}}: sucht rekursiv in allen Dateien
+        \item \texttt{echo \textit{text}}: gibt einen Text aus
       \end{itemize}
     \end{frame}
 
+  \subsection{Nützliche Shell Features}
     \begin{frame}{Allgemeines}
       \begin{itemize}
         \item pipes\\
