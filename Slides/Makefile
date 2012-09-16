@@ -1,5 +1,5 @@
 
-slides.pdf: slides.tex beamerthemeTU.sty
+slides.pdf: slides.tex beamerthemeTU.sty sec_nix.tex sec_git.tex sec_python.tex
 	lualatex slides.tex
 	lualatex slides.tex
 

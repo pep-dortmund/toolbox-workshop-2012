@@ -2,14 +2,14 @@
   \subsection{Allgemeines}
     \begin{frame}{Dateisystem}
       \begin{itemize}
-        \item \texttt{/} trennt Teile eines Pfads (Ordner und Dateien) (Windows: \texttt{\textbackslash})
+        \item \texttt{/} trennt Teile eines Pfads (Verzeichnisse und Dateien) (Windows: \texttt{\textbackslash})
         \item Das gesamte Dateisystem bildet \emph{einen} Baum, beginnend mit \texttt{/}
-        \item Es gibt immer einen aktuellen Ordner (working directory)
-        \item Pfade können absolut (beginnend mit \texttt{/}) oder relativ zum aktuellen Ordner angegeben werden
-        \item drei spezielle Ordner:
+        \item Es gibt immer einen aktuellen Verzeichnis (working directory)
+        \item Pfade können absolut (beginnend mit \texttt{/}) oder relativ zum aktuellen Verzeichnis angegeben werden
+        \item drei spezielle Verzeichnisse:
           \begin{itemize}
-            \item \texttt{.} der aktuelle Ordner (oder der aktuelle im bisherigen Pfad, \texttt{a/./}~=~\texttt{a/})
-            \item \texttt{..} der Oberordner des aktuellen Ordners (\texttt{a/b/../}~=~\texttt{a/})
+            \item \texttt{.} das aktuelle Verzeichnis (oder der aktuelle im bisherigen Pfad, \texttt{a/./}~=~\texttt{a/})
+            \item \texttt{..} das Oberverzeichnis des aktuellen Verzeichnisses (\texttt{a/b/../}~=~\texttt{a/})
             \item \texttt{\textasciitilde} das Heimverzeichnis (nur am Anfang eines Pfads)
           \end{itemize}
         \item Dateien, die mit \texttt{.} anfangen sind versteckt (z.B. \texttt{\textasciitilde/.vimrc})
@@ -46,8 +46,7 @@
   \subsection{Befehle}
     \begin{frame}{\texttt{man}}
       \begin{itemize}
-        \item \texttt{man} für manual
-        \item zeigt die Hilfe für ein Programm
+        \item \texttt{man \textit{topic}} für manual: zeigt die Hilfe für ein Programm
         \item Beispiel: \texttt{man man}
       \end{itemize}
     \end{frame}
@@ -55,7 +54,7 @@
     \begin{frame}{\texttt{pwd}, \texttt{cd}}
       \begin{itemize}
         \item \texttt{pwd} für print working directory: zeigt das aktuelle Verzeichnis
-        \item \texttt{cd} für change directory: wechselt in das angegebene Verzeichnis
+        \item \texttt{cd \textit{directory}} für change directory: wechselt in das angegebene Verzeichnis
         \item Beispiel:\\
           \texttt{\$ pwd\\
                   /home/ismo\\
@@ -70,10 +69,10 @@
 
     \begin{frame}{ls}
       \begin{itemize}
-        \item \texttt{ls} für list: zeigt den Inhalt eines Verzeichnisses an
+        \item \texttt{ls [\textit{directory}]} für list: zeigt den Inhalt eines Verzeichnisses an
         \item \texttt{ls -l}: zeigt mehr Informationen über Dateien und Verzeichnisse
         \item \texttt{ls -a}: zeigt auch versteckte Dateien
-        \item \texttt{ls -R}: zeigt auch den Inhalt von Unterordnern
+        \item \texttt{ls -R}: zeigt auch den Inhalt von Unterverzeichnissen
         \item alle Optionen können kombiniert werden
       \end{itemize}
     \end{frame}
@@ -97,6 +96,29 @@
     \end{frame}
 
     \begin{frame}{\texttt{mkdir}}
+      \begin{itemize}
+        \item \texttt{mkdir \textit{directory}} für make directory: erstellt ein neues Verzeichnis
+        \item \texttt{mkdir -p \textit{directory}}: erstellt ein neues Verzeichnis und alle notwendigen Oberverzeichnisse
+      \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+      Beispiel:\\
+      \texttt{\$ ls\\
+              \$ mkdir a\\
+              \$ mkdir b/c\\
+              mkdir: cannot create directory ‘b/c’: No such file or directory\\
+              \$ mkdir -p b/c\\
+              \$ ls -R\\
+              .:\\
+              a/  b/\\
+              ~\\
+              ./a:\\
+              ~\\                  
+              ./b:\\
+              c/\\
+              ~\\
+              ./b/c:}
     \end{frame}
 
     \begin{frame}{cp, mv, rm}
