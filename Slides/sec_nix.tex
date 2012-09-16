@@ -95,10 +95,11 @@
               c}
     \end{frame}
 
-    \begin{frame}{\texttt{mkdir}}
+    \begin{frame}{\texttt{mkdir}, \texttt{touch}}
       \begin{itemize}
         \item \texttt{mkdir \textit{directory}} für make directory: erstellt ein neues Verzeichnis
         \item \texttt{mkdir -p \textit{directory}}: erstellt ein neues Verzeichnis und alle notwendigen Oberverzeichnisse
+        \item \texttt{touch \textit{file}}: erstellt eine neue, leere Datei
       \end{itemize}
     \end{frame}
 
@@ -109,6 +110,7 @@
               \$ mkdir b/c\\
               mkdir: cannot create directory ‘b/c’: No such file or directory\\
               \$ mkdir -p b/c\\
+              \$ touch b/file\\
               \$ ls -R\\
               .:\\
               a/  b/\\
@@ -116,7 +118,7 @@
               ./a:\\
               ~\\                  
               ./b:\\
-              c/\\
+              c/ file\\
               ~\\
               ./b/c:}
     \end{frame}
@@ -133,6 +135,21 @@
         \item \texttt{rmdir \textit{directory}} für remove directory: löscht ein leeres Verzeichnis
         \item \texttt{rm -r} kann statt \texttt{rmdir} verwendet werden
       \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+      Beispiel:\\
+      \texttt{\$ ls\\
+              a\\
+              \$ cp a b\\
+              \$ ls\\
+              a  b\\
+              \$ mv b c\\
+              \$ ls\\
+              a  c\\
+              \$ rm a\\
+              \$ ls\\
+              c}
     \end{frame}
 
     \begin{frame}{cat, less}
