@@ -8,8 +8,8 @@
     \begin{frame}{Dateisystem}
       \begin{itemize}
         \item \texttt{/} trennt Teile eines Pfads (Verzeichnisse und Dateien) (Windows: \texttt{\textbackslash})
-        \item Das gesamte Dateisystem bildet \emph{einen} Baum, beginnend mit \texttt{/}
-        \item Es gibt immer einen aktuellen Verzeichnis (working directory)
+        \item Das gesamte Dateisystem bildet \emph{einen} Baum, beginnend mit der Wurzel \texttt{/}.
+        \item Es gibt immer ein aktuelles Verzeichnis (working directory)
         \item Pfade können absolut (beginnend mit \texttt{/}) oder relativ zum aktuellen Verzeichnis angegeben werden
         \item drei spezielle Verzeichnisse:
           \begin{itemize}
@@ -17,7 +17,7 @@
             \item \texttt{..} das Oberverzeichnis des aktuellen Verzeichnisses (\texttt{a/b/../}~=~\texttt{a/})
             \item \texttt{\textasciitilde} das Heimverzeichnis (nur am Anfang eines Pfads)
           \end{itemize}
-        \item Dateien, die mit \texttt{.} anfangen sind versteckt (z.B. \texttt{\textasciitilde/.vimrc})
+        \item Dateien, die mit \texttt{.} anfangen sind versteckt (z.B. \texttt{\textasciitilde/.vimrc}) und heißen Dotfiles
       \end{itemize}
     \end{frame}
 
@@ -67,8 +67,8 @@
                   \$ cd ../../etc\\
                   \$ pwd\\
                   /etc\\
-                  \$ cd \textasciitilde\\
-                  \$ pwd\\
+                  \$ cd \textasciitilde} (\texttt{cd} reicht auch für das Home-Verzeichnis) \\
+          \texttt{\$ pwd\\
                   /home/ismo}
       \end{itemize}
     \end{frame}
@@ -84,7 +84,7 @@
     \end{frame}
 
     \begin{frame}
-      Beispiel:\\
+      Beispiel:\\ 
       \texttt{\$ ls\\
               a/  b\\
               \$ ls -l\\
@@ -134,6 +134,7 @@
         \item \texttt{cp \textit{source} \textit{destination}} für copy: kopiert eine Datei
         \item \texttt{cp -r \textit{source} \textit{destination}}: kopiert ein Verzeichnis rekursiv
         \item das Ziel kann ein Verzeichnis oder der exakte Pfad sein
+        \item \texttt{\textit{source}} können mehrere Dateien sein, der letzte Pfad zählt als \texttt{\textit{destination}}
         \item \texttt{mv \textit{source} \textit{destination}} für move: verschiebt order benennt eine Datei um
         \item Ziel kann wir bei \texttt{cp} sein
         \item \texttt{rm \textit{file}} für remove: löscht eine Datei
@@ -160,7 +161,7 @@
 
     \begin{frame}{\texttt{cat}, \texttt{less}, \texttt{grep}, \texttt{echo}}
       \begin{itemize}
-        \item \texttt{cat [\textit{file}]} für concatenate: gibt den Inhalt einer (oder mehr) Dateien aus
+        \item \texttt{cat [\textit{file}]} für concatenate: gibt den Inhalt einer (oder mehrerer) Dateien aus
         \item \texttt{less [\textit{file}]} (besser als \texttt{more}): zeigt eine Datei in einer navigablen Form an
         \item \texttt{grep \textit{pattern} [\textit{file}]} für ???: sucht nach einem Muster
         \item \texttt{grep -i \textit{pattern} [\textit{file}]}: ignoriert Groß- und Kleinschreibung
