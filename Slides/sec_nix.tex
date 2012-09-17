@@ -181,9 +181,32 @@
 
     \begin{frame}{Ein- und Ausgabe}
       \begin{itemize}
-        \item >, >>, <
-        \item pipes
+        \item Programme haben einen Eingabe- und einen Ausgabestream
+        \item diese können verschieden verwendet werden
+        \item \texttt{\textit{command} > \textit{file}}: überschriebt eine Datei mit der Ausgabe
+        \item \texttt{\textit{command} >> \textit{file}}: wie \texttt{>}, aber schreibt ans Ende der Datei, statt zu überschreiben
+        \item \texttt{\textit{command} < \textit{file}}: verwendet eine Datei als Eingabe
+        \item \texttt{\textit{command1} | \textit{command2}}: verwendet die Ausgabe eines Programms als Eingabe eines anderen
       \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+      Beispiel:\\
+      \texttt{\$ echo "bla bla bla" > a\\
+              \$ cat a\\
+              bla bla bla\\
+              \$ echo "foo" >> a\\
+              \$ cat a\\
+              bla bla bla\\
+              foo\\
+              \$ grep foo < a\\
+              foo\\
+              \$ touch abc\\
+              \$ touch bcd\\
+              \$ touch cde\\
+              \$ ls | grep b\\
+              abc\\
+              bcd}
     \end{frame}
 
     \begin{frame}{Globbing}
