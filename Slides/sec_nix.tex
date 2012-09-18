@@ -57,21 +57,23 @@
       \end{itemize}
     \end{frame}
 
-    \begin{frame}{\texttt{pwd}, \texttt{cd}}
+    \begin{frame}[fragile]{\texttt{pwd}, \texttt{cd}}
       \begin{itemize}
         \item \texttt{pwd} für print working directory: zeigt das aktuelle Verzeichnis
         \item \texttt{cd \textit{directory}} für change directory: wechselt in das angegebene Verzeichnis
-        \item Beispiel:\\
-          \texttt{\$ pwd\\
-                  /home/ismo\\
-                  \$ cd ../../etc\\
-                  \$ pwd\\
-                  /etc\\
-                  \$ cd \textasciitilde\\
-                  \$ pwd\\
-                  /home/ismo}
+        \item Beispiel:
+\begin{verbatim}
+$ pwd
+/home/ismo
+$ cd ../../etc
+$ pwd
+/etc
+$ cd ~
+$ pwd
+/home/ismo
+\end{verbatim}
       \end{itemize}
-    \end{frame}
+\end{frame}
 
     \begin{frame}{ls}
       \begin{itemize}
@@ -83,23 +85,25 @@
       \end{itemize}
     \end{frame}
 
-    \begin{frame}
-      Beispiel:\\
-      \texttt{\$ ls\\
-              a/  b\\
-              \$ ls -l\\
-              total 4.0K\\
-              drwxr-xr-x 2 ismo users 4.0K Sep 15 19:52 a/\\
-              -rw-r--r-- 1 ismo users \ \ \ 0 Sep 15 19:52 b\\
-              \$ ls -a\\
-              ./  ../  a/  b\\
-              \$ ls -R\\
-              .:\\
-              a/  b\\
-              ~\\
-              ./a:\\
-              c}
-    \end{frame}
+    \begin{frame}[fragile]
+      Beispiel:
+\begin{verbatim}
+$ ls
+a/  b
+$ ls -l
+total 4.0K
+drwxr-xr-x 2 ismo users 4.0K Sep 15 19:52 a/
+-rw-r--r-- 1 ismo users    0 Sep 15 19:52 b
+$ ls -a
+./  ../  a/  b
+$ ls -R
+.:
+a/  b
+
+./a:
+c
+\end{verbatim}
+\end{frame}
 
     \begin{frame}{\texttt{mkdir}, \texttt{touch}}
       \begin{itemize}
@@ -109,25 +113,27 @@
       \end{itemize}
     \end{frame}
 
-    \begin{frame}
-      Beispiel:\\
-      \texttt{\$ ls\\
-              \$ mkdir a\\
-              \$ mkdir b/c\\
-              mkdir: cannot create directory ‘b/c’: No such file or directory\\
-              \$ mkdir -p b/c\\
-              \$ touch b/file\\
-              \$ ls -R\\
-              .:\\
-              a/  b/\\
-              ~\\
-              ./a:\\
-              ~\\
-              ./b:\\
-              c/ file\\
-              ~\\
-              ./b/c:}
-    \end{frame}
+    \begin{frame}[fragile]
+      Beispiel:
+\begin{verbatim}
+$ ls
+$ mkdir a
+$ mkdir b/c
+mkdir: cannot create directory ‘b/c’: No such file or directory
+$ mkdir -p b/c
+$ touch b/file
+$ ls -R
+.:
+a/  b/
+~
+./a:
+~\\                  
+./b:
+c/ file
+
+./b/c:
+\end{verbatim}
+\end{frame}
 
     \begin{frame}{\texttt{cp}, \texttt{mv}, \texttt{rm}, \texttt{rmdir}}
       \begin{itemize}
@@ -144,20 +150,22 @@
       \end{itemize}
     \end{frame}
 
-    \begin{frame}
-      Beispiel:\\
-      \texttt{\$ ls\\
-              a\\
-              \$ cp a b\\
-              \$ ls\\
-              a  b\\
-              \$ mv b c\\
-              \$ ls\\
-              a  c\\
-              \$ rm a\\
-              \$ ls\\
-              c}
-    \end{frame}
+    \begin{frame}[fragile]
+      Beispiel:
+\begin{verbatim}
+$ ls
+a
+$ cp a b
+$ ls
+a  b
+$ mv b c
+$ ls
+a  c
+$ rm a
+$ ls
+c
+\end{verbatim}
+\end{frame}
 
     \begin{frame}{\texttt{cat}, \texttt{less}, \texttt{grep}, \texttt{echo}}
       \begin{itemize}
@@ -190,27 +198,29 @@
       \end{itemize}
     \end{frame}
 
-    \begin{frame}
-      Beispiel:\\
-      \texttt{\$ echo "bla bla bla" > a\\
-              \$ cat a\\
-              bla bla bla\\
-              \$ echo "foo" >> a\\
-              \$ cat a\\
-              bla bla bla\\
-              foo\\
-              \$ grep foo < a\\
-              foo\\
-              \$ touch abc\\
-              \$ touch bcd\\
-              \$ touch cde\\
-              \$ ls | grep b\\
-              abc\\
-              bcd}
-    \end{frame}
+    \begin{frame}[fragile]
+      Beispiel:
+\begin{verbatim}
+$ echo "bla bla bla" > a
+$ cat a
+bla bla bla
+$ echo "foo" >> a
+$ cat a
+bla bla bla
+foo
+$ grep foo < a
+foo
+$ touch abc
+$ touch bcd
+$ touch cde
+$ ls | grep b
+abc
+bcd
+\end{verbatim}
+\end{frame}
 
     \begin{frame}{Globbing (*)}
       \begin{itemize}
-          \item
+        \item 
       \end{itemize}
     \end{frame}
