@@ -1,7 +1,7 @@
 
 slides.pdf: slides.tex beamerthemeTU.sty sec_nix.tex sec_git.tex sec_python.tex
-	lualatex slides.tex
-	lualatex slides.tex
+	lualatex --shell-escape slides.tex
+	lualatex --shell-escape slides.tex
 
 show: slides.pdf
 	mimeopen slides.pdf
