@@ -44,7 +44,7 @@
 % References
 \usepackage{varioref}
 \usepackage[breaklinks]{hyperref}
-\usepackage{hypdvips}
+%\usepackage{hypdvips}
 \AtBeginDocument{\renewcommand{\subsectionautorefname}{Abschnitt}}
 \AtBeginDocument{\renewcommand{\subsubsectionautorefname}{Abschnitt}}
 
@@ -64,7 +64,7 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
-\renewcommand{\C}{\mathbb{C}}
+\newcommand{\C}{\mathbb{C}}
 % Identity
 \newcommand{\E}{\mathbb{1}}
 % Special numbers
@@ -124,53 +124,7 @@
 \IEEEeqnarraydefcolsep{0}{\leftmargini} % for well-aligned text in equation arrays %
 
 % Code listings
-\usepackage{listings}
-\usepackage{textcomp}
-\usepackage{setspace}
-\renewcommand{\lstlistlistingname}{Code Listings}
-\renewcommand{\lstlistingname}{Code Listing}
-% Python
-\lstnewenvironment{python}[1][]{
-    \lstset{
-        language=python,
-        extendedchars=false,
-        tabsize=2,
-        breaklines=true,
-        captionpos=t,
-        frame=tb,
-        framerule=.2pt,
-        basicstyle=\ttfamily\small\setstretch{.5},
-        stringstyle=\color{BrickRed},
-        showstringspaces=false,
-        alsoletter={1234567890},
-        otherkeywords={\ , \}, \{},
-        keywordstyle=\color{BurntOrange},
-        emph={access,and,break,class,continue,def,del,elif,else,except,exec,finally,for,from,global,if,import,in,is,lambda,not,or,pass,print,raise,return,try,while},
-        emphstyle=\color{RoyalBlue},
-        emph={[2]True, False, None, self},
-        emphstyle=[2]\color{YellowGreen},
-        emph={[3]from, import, as},
-        emphstyle=[3]\color{BurntOrange},
-        upquote=true,
-        morecomment=[s]{"""}{"""},
-        commentstyle=\color{Gray}\slshape,
-        emph={[4]1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
-        emphstyle=[4]\color{YellowGreen},
-        literate=*{:}{{\textcolor{BurntOrange}:}}{1}%
-        {=}{{\textcolor{BurntOrange}=}}{1}%
-        {-}{{\textcolor{BurntOrange}-}}{1}%
-        {+}{{\textcolor{BurntOrange}+}}{1}%
-        {*}{{\textcolor{BurntOrange}*}}{1}%
-        {!}{{\textcolor{BurntOrange}!}}{1}%
-        {(}{{\textcolor{BurntOrange}(}}{1}%        
-        {)}{{\textcolor{BurntOrange})}}{1}%
-        {[}{{\textcolor{BurntOrange}[}}{1}%
-        {]}{{\textcolor{BurntOrange}]}}{1}%
-        {<}{{\textcolor{BurntOrange}<}}{1}%
-        {>}{{\textcolor{BurntOrange}>}}{1},%
-        #1
-    }
-}{}
+\usepackage{minted}
 
 % Abbreviations for repeated commands
 \newcommand{\img}[4]{
