@@ -10,6 +10,44 @@
 \section{Vorgehen}
 \section{PeP et al.}
 
+\section{Installation}
+
+\subsection{Ubuntu 12.04}
+Die benötigten Programme und Libraries kann man unter Ubuntu per Kommandozeile installieren.
+
+\subsubsection{Git installieren}
+\begin{verbatim}
+$ sudo apt-get install git
+\end{verbatim}
+
+\subsubsection{Python und Libraries installieren}
+\begin{verbatim}
+$ sudo apt-get install python3 python3-numpy python3-scipy ipython3
+\end{verbatim}
+
+\subsubsection{Matplotlib kompilieren}
+
+Leider gibt es noch kein Paket für die Python3-Version von Matplotlib.
+Die Bibliothek kann aber so kompiliert werden:
+
+\begin{verbatim}
+$ sudo apt-get install python3-dev libpng-dev libfreetype6-dev python3-pyqt4
+$ wget https://github.com/matplotlib/matplotlib/matplotlib-1.2.0rc1.tar.gz
+$ tar xzvf matplotlib-1.2.0rc1.tar.gz
+$ cd matplotlib-1.2.0rc1
+$ python3 setup.py build
+$ sudo python3 setup.py install
+$ mkdir -p ~/.matplotlib && echo 'backend: Qt4Agg' > ~/.matplotlib/matplotlibrc
+\end{verbatim}
+
+\subsubsection{Testen}
+
+Zum Schluss kann man Matplotlib noch testen:
+
+\begin{verbatim}
+$ ipython3 --pylab
+In[1]: plot([1, 2, 3])
+\end{verbatim}
 
 \chapter{*nix Grundlagen}
 \section{Benutzung der Shell}
