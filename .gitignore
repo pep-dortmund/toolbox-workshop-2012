@@ -33,3 +33,5 @@
 *.pdf
 *.pyg
 *.fls
+*.dvi
+*.out.ps
