@@ -7,25 +7,27 @@
   \subsection{Dateisystem}
     \begin{frame}{Dateisystem}
       \begin{itemize}
-        \item \texttt{/} trennt Teile eines Pfads (Verzeichnisse und Dateien) (Windows: \texttt{\textbackslash})
-        \item Das gesamte Dateisystem bildet \emph{einen} Baum, beginnend mit der Wurzel \texttt{/}
-        \item Es gibt immer ein aktuelles Verzeichnis (working directory)
-        \item Pfade können absolut (beginnend mit \texttt{/}) oder relativ zum aktuellen Verzeichnis angegeben werden
+        \item \texttt{/} trennt Teile eines Pfads
+        \item Das gesamte Dateisystem bildet \emph{einen} Baum
+        \item Es gibt immer ein aktuelles Verzeichnis
+        \item Pfade können absolut oder relativ angegeben werden
         \item drei spezielle Verzeichnisse:
           \begin{itemize}
-            \item \texttt{.} das aktuelle Verzeichnis (oder der aktuelle im bisherigen Pfad, \texttt{a/./}~=~\texttt{a/})
-            \item \texttt{..} das Oberverzeichnis des aktuellen Verzeichnisses (\texttt{a/b/../}~=~\texttt{a/})
-            \item \texttt{\textasciitilde} das Heimverzeichnis (nur am Anfang eines Pfads)
+            \item \texttt{.} das aktuelle Verzeichnis
+            \item \texttt{..} das Oberverzeichnis des aktuellen Verzeichnisses
+            \item \texttt{\textasciitilde} das Heimverzeichnis
           \end{itemize}
-        \item Dateien, die mit \texttt{.} anfangen sind versteckt (z.B. \texttt{\textasciitilde/.vimrc}) und heißen Dotfiles
+        \item Dateien, die mit \texttt{.} anfangen sind versteckt
       \end{itemize}
     \end{frame}
 
   \subsection{Aufbau einer Eingabe}
     \begin{frame}{Aufbau einer Eingabe}
-      \texttt{\$ ls -l --all \textit{directory}\\
-              \textit{output}\\
-              \$}
+      \begin{singlespace}
+        \texttt{\$ ls -l --all \textit{directory}\\
+                \textit{output}\\
+                \$}
+      \end{singlespace}
       \begin{center}
         \begin{tabular}{>{\tt}l l}
           \toprule
@@ -42,24 +44,20 @@
 
     \begin{frame}
       \begin{itemize}
-        \item \texttt{\$} ist nur ein Beispiel für einen Prompt, häufig wird das aktuelle Verzeichnis und/oder andere Informationen angezeigt
-        \item kurze Optionen können zusammengefasst werden (\texttt{ls~-la} = \texttt{ls -l -a} = \texttt{ls -l --all})
+        \item \texttt{\$} ist nur ein Beispiel für einen Prompt
+        \item kurze Optionen können zusammengefasst werden
         \item die Reihenfolge der Optionen ist egal
-        \item meistens werden mehrere Argumente (z.B. Dateien) akzeptiert
+        \item meistens werden mehrere Argumente akzeptiert
       \end{itemize}
     \end{frame}
 
   \subsection{Befehle}
-    \begin{frame}{\texttt{man}}
+  \begin{frame}{\texttt{man}, \texttt{pwd}, \texttt{cd}, \texttt{echo}}
       \begin{itemize}
         \item \texttt{man \textit{topic}} für manual: zeigt die Hilfe für ein Programm
-      \end{itemize}
-    \end{frame}
-
-    \begin{frame}{\texttt{pwd}, \texttt{cd}}
-      \begin{itemize}
         \item \texttt{pwd} für print working directory: zeigt das aktuelle Verzeichnis
         \item \texttt{cd \textit{directory}} für change directory: wechselt in das angegebene Verzeichnis
+        \item \texttt{echo \textit{text}}: gibt einen Text aus
       \end{itemize}
     \end{frame}
 
@@ -69,7 +67,6 @@
         \item \texttt{ls -l}: zeigt mehr Informationen über Dateien und Verzeichnisse
         \item \texttt{ls -a}: zeigt auch versteckte Dateien
         \item \texttt{ls -R}: zeigt auch den Inhalt von Unterverzeichnissen
-        \item alle Optionen können kombiniert werden
       \end{itemize}
     \end{frame}
 
@@ -85,25 +82,20 @@
       \begin{itemize}
         \item \texttt{cp \textit{source} \textit{destination}} für copy: kopiert eine Datei
         \item \texttt{cp -r \textit{source} \textit{destination}}: kopiert ein Verzeichnis rekursiv
-        \item das Ziel kann ein Verzeichnis oder der exakte Pfad sein
-        \item \texttt{\textit{source}} können mehrere Dateien sein, der letzte Pfad zählt als \texttt{\textit{destination}}
         \item \texttt{mv \textit{source} \textit{destination}} für move: verschiebt order benennt eine Datei um
-        \item Ziel kann wir bei \texttt{cp} sein
         \item \texttt{rm \textit{file}} für remove: löscht eine Datei
         \item \texttt{rm -r \textit{file}}: löscht ein Verzeichnis rekursiv
         \item \texttt{rmdir \textit{directory}} für remove directory: löscht ein leeres Verzeichnis
-        \item \texttt{rm -r} kann statt \texttt{rmdir} verwendet werden
       \end{itemize}
     \end{frame}
 
-    \begin{frame}{\texttt{cat}, \texttt{less}, \texttt{grep}, \texttt{echo}}
+    \begin{frame}{\texttt{cat}, \texttt{less}, \texttt{grep}}
       \begin{itemize}
         \item \texttt{cat [\textit{file}]} für concatenate: gibt den Inhalt einer (oder mehrerer) Dateien aus
         \item \texttt{less [\textit{file}]} (besser als \texttt{more}): zeigt eine Datei in einer navigablen Form an
         \item \texttt{grep \textit{pattern} [\textit{file}]} für ???: sucht nach einem Muster
         \item \texttt{grep -i \textit{pattern} [\textit{file}]}: ignoriert Groß- und Kleinschreibung
         \item \texttt{grep -r \textit{pattern} \textit{directory}}: sucht rekursiv in allen Dateien
-        \item \texttt{echo \textit{text}}: gibt einen Text aus
       \end{itemize}
     \end{frame}
 
