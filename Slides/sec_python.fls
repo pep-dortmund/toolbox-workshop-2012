@@ -1,0 +1,10 @@
+PWD /Users/kdungs/Documents/Uni/PeP/toolboxworkshop/Slides
+INPUT /usr/local/texlive/2011/texmf.cnf
+INPUT /usr/local/texlive/2011/texmf/web2c/texmf.cnf
+INPUT /usr/local/texlive/2011/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT /Users/kdungs/Documents/Uni/PeP/toolboxworkshop/Slides/sec_python.tex
+OUTPUT sec_python.log
+INPUT /usr/local/texlive/2011/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/local/texlive/2011/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/local/texlive/2011/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT /usr/local/texlive/2011/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
