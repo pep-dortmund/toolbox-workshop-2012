@@ -219,8 +219,16 @@ bcd
 \end{verbatim}
 \end{frame}
 
-    \begin{frame}{Globbing (*)}
+    \begin{frame}[fragile]{Globbing (\texttt{*})}
       \begin{itemize}
-        \item 
+        \item \texttt{*} wird ersetzt durch alle passenden Dateien
+        \item Beispiel:
+\begin{verbatim}
+$ ls .vim*
+.viminfo  .vimrc
+
+.vim:
+backup/  bundle/  swap/  syntax/
+\end{verbatim}
       \end{itemize}
-    \end{frame}
+\end{frame}
