@@ -13,4 +13,5 @@ clean:
 	rm -rf *.snm
 	rm -rf *.aux
 	rm -rf *.nav
+	rm -rf *.vrb
 	rm -rf slides.pdf
