@@ -15,3 +15,4 @@ clean:
 	rm -rf *.nav
 	rm -rf *.vrb
 	rm -rf notes.pdf
+	rm -rf *.pyg
