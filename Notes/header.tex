@@ -1,8 +1,10 @@
+\documentclass[a4paper,11pt,oneside]{scrbook}
+
 % Font
-\usepackage{lmodern}
-%\usepackage{fourier}
 \usepackage{fontspec}
-\usepackage{textcomp}
+\setmainfont{Latin Modern Roman}
+\setsansfont{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
 
 % Language
 \usepackage[ngerman]{babel}
@@ -14,12 +16,9 @@
 \renewcommand{\headsep}{32pt}
 \renewcommand{\headheight}{42pt}
 \usepackage[margin=10pt,font=small,labelfont=bf]{caption}
-\usepackage{soulutf8}
 
 % Tables
-\usepackage{longtable}
 \usepackage{booktabs}
-\usepackage{float}
 
 % Color (mostly needed for code listings)
 \usepackage[usenames,dvipsnames]{xcolor}
@@ -27,29 +26,12 @@
 % Graphics
 \usepackage{graphicx}
 
-% Literature
-%\usepackage[style=numeric,backend=biber]{biblatex}
-%\usepackage[notbib]{tocbibind}
-%\addbibresource{../literature.bib}
-
-% Units
-\usepackage{siunitx}
-\sisetup{
-    locale=DE,
-    separate-uncertainty=true,
-    per-mode=fraction
-}
-
 % References
 \usepackage{varioref}
-\usepackage[breaklinks]{hyperref}
-%\usepackage{hypdvips}
+\usepackage[breaklinks,unicode=true,pdfcreator={},pdfproducer={}]{hyperref}
+\urlstyle{tt}
 \AtBeginDocument{\renewcommand{\subsectionautorefname}{Abschnitt}}
 \AtBeginDocument{\renewcommand{\subsubsectionautorefname}{Abschnitt}}
-
-% URLs
-\usepackage{url}
-\urlstyle{tt}
 
 % Maths
 \usepackage{amsfonts}
@@ -57,91 +39,16 @@
 \usepackage{amsmath}
 \usepackage{amscd}
 \usepackage{amstext}
-\usepackage{tensor}
-% Sets
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
-% Identity
-\newcommand{\E}{\mathbb{1}}
-% Special numbers
-\renewcommand{\i}{\mathbf{i}}
-\newcommand{\e}{\mathbf{e} }
-\newcommand{\enull}{\varepsilon_0}
-% Special Symbols
-\newcommand{\lagrange}{\mathcal{L}}
-\newcommand{\landau}{\mathcal{O}}
-% Operators
-\newcommand{\diff}{\mathrm{d}}
-\newcommand{\laplace}{\; \mathbf{\Delta}}
-\newcommand{\rot}{\; \mathrm{rot} \,}
-\newcommand{\grad}{\; \mathrm{grad} \,}
-\newcommand{\dive}{\; \mathrm{div} \,}
-\renewcommand{\Re}{\; \mathrm{Re} \,}
-\renewcommand{\Im}{\; \mathrm{Im} \,}
-% Trigonometry
-\newcommand{\cotanh}{\; \mathrm{cotanh} \,}
-\newcommand{\asinh}{\; \mathrm{areasinh} \,}
-\newcommand{\acosh}{\; \mathrm{areacosh} \,}
-\newcommand{\atanh}{\; \mathrm{areatanh} \,}
-\newcommand{\acoth}{\; \mathrm{areacoth} \,}
-% Absolute and Norm
-\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
-\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
-% Mean values and standard deviation
-\newcommand{\mean}[1]{\langle #1 \rangle}
-\newcommand{\std}[1]{\sigma_{#1}}
-% Shortcut for sums
-\newcommand{\sumi}[1]{\sum\limits_{#1 = 0}^{\infty}}
-\newcommand{\sumk}[2]{\sum\limits_{#1}^{#2}}
-% Shortcut for limes
-\newcommand{\limi}[1]{\lim\limits_{#1\rightarrow\infty}}
-% Shortcut for integrals
-\newcommand{\inti}{\int\limits_{-\infty}^\infty}
-\newcommand{\intx}[2]{\int\limits_{#1}^{#2}}
-% Shortcut for derivatives
-\newcommand{\deriv}[2]{\frac{\diff #1}{\diff #2}}
-\newcommand{\derivsq}[2]{\frac{\diff^2 #1}{\diff #2^2}}
-\newcommand{\partderiv}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\partderivsq}[2]{\frac{\partial^2 #1}{\partial #2^2}}
-% Dirac braket notation
-\newcommand{\bra}[1]{\langle #1 \mid}
-\newcommand{\ket}[1]{\mid #1 \rangle}
-\newcommand{\braket}[2]{\langle #1 \mid #2 \rangle}
-% Miscellaneous
-\newcommand{\qed}{\hfill $\square$\\}
-\newcommand{\me}{\overset{!}{=}}
-
-% Equations
-\usepackage{IEEEtrantools}
-\newenvironment{eqn}{\begin{IEEEeqnarray}{c}}{\end{IEEEeqnarray}}
-\newenvironment{eqn*}{\begin{IEEEeqnarray*}{c}}{\end{IEEEeqnarray*}}
-\newenvironment{eqns}[1]{\begin{IEEEeqnarray}{#1}}{\end{IEEEeqnarray}}
-\newenvironment{eqns*}[1]{\begin{IEEEeqnarray*}{#1}}{\end{IEEEeqnarray*}}
-\IEEEeqnarraydefcolsep{0}{\leftmargini} % for well-aligned text in equation arrays %
 
 % Code listings
 \usepackage{minted}
 
-% Abbreviations for repeated commands
-\newcommand{\img}[4]{
-    \begin{figure}[H]
-        \begin{center}
-            \caption{#4}
-            \includegraphics[width=#1]{#2}
-            \label{#3}
-        \end{center}
-    \end{figure}
-}
-
 \newcommand{\mytitle}[1]{
     % Fancy headlines
     \pagestyle{fancy}
-    \fancyhead[RE]{\textit{\nouppercase{\leftmark}}}
+    \fancyhead[R]{\textit{\nouppercase{\leftmark}}}
     \fancyhead[LO]{\textit{\nouppercase{\rightmark}}}
-    \fancyfoot[LE,RO]{\thepage}
+    \fancyfoot[L,RO]{\thepage}
     \cfoot{}
     % PDF Information
     \hypersetup{
