@@ -1,5 +1,5 @@
 
-notes.pdf: notes.tex header.tex
+notes.pdf: notes.tex header.tex sec_nix.tex sec_git.tex sec_python.tex
 	lualatex --shell-escape notes.tex
 	lualatex --shell-escape notes.tex
 
