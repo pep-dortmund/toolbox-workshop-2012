@@ -1,7 +1,55 @@
+## Installieren unter Windows 7
 
-## Installieren unter Windows
+### Downloads
 
-...
+	http://msysgit.googlecode.com/files/Git-1.7.11-preview20120710.exe
+	http://python.org/ftp/python/3.2.3/python-3.2.3.msi
+	http://sourceforge.net/projects/numpy/files/NumPy/1.6.2/y/download
+	http://sourceforge.net/projects/scipy/files/scipy/0.10.1/y/download
+	https://github.com/downloads/matplotlib/matplotlib/matplotlib-1.2.0rc2.win32-py3.2.exe
+	http://www.lfd.uci.edu/~gohlke/pythonlibs/2mbixi69/distribute-0.6.28.win32-py3.2.exe
+	http://www.lfd.uci.edu/~gohlke/pythonlibs/2mbixi69/pyreadline-2.0-dev1.win32-py3.2.exe
+	https://github.com/downloads/zeromq/pyzmq/pyzmq-2.2.0.win32-py3.2.msi
+	http://www.riverbankcomputing.co.uk/static/Downloads/PyQt4/PyQt-Py3.2-x86-gpl-4.9.4-1.exe
+	http://www.lfd.uci.edu/~gohlke/pythonlibs/2mbixi69/Pygments-1.5.win32-py3.2.exe
+	http://pypi.python.org/packages/any/i/ipython/ipython-0.13.py3-win32.exe#md5=16cfebdb126ca7a07d51b2f6b2302edd
+
+### Git
+
+	Git-1.7.11-preview20120710.exe
+
+* Pfad: C:\Programs\Git
+* Use a TrueType font in all console windows
+
+### Python
+
+	python-3.2.3.msi
+
+* Pfad: C:\Programs\Python32
+
+### Numpy, Scipy, Matplotlib, Distribute, Pyreadline, Pyzmq, PyQt4, Pygments
+
+	numpy-1.6.2-win32-superpack-python3.2.exe
+	scipy-0.10.1-win32-superpack-python3.2.exe
+	matplotlib-1.2.0rc2.win32-py3.2.exe
+	distribute-0.6.28.win32-py3.2.exe
+	pyreadline-2.0-dev1.win32-py3.2.exe
+	pyzmq-2.2.0.win32-py3.2.msi
+	PyQt-Py3.2-x86-gpl-4.9.4-1.exe
+	Pygments-1.5.win32-py3.2.exe
+
+### Ipython
+
+	ipython-0.13.py3-win32.exe
+
+* Rechstklick -> Als Administrator ausführen
+
+### Letzte Schritte
+
+Start -> suche cmd.exe -> Rechtsklick -> Als Administrator ausführen
+
+	setx /M PATH "C:\Programs\Python32;%PATH%"
+	copy C:\Programs\Python32\python.exe C:\Programs\Python32\python3.exe
 
 ## Installieren unter OS X
 
@@ -36,18 +84,17 @@ Leider gibt es noch kein Paket für die Python3-Version von Matplotlib.
 Die Bibliothek kann aber so kompiliert werden:
 
     sudo apt-get install python3-dev libpng-dev libfreetype6-dev python3-pyqt4
-    wget https://github.com/matplotlib/matplotlib/matplotlib-1.2.0rc1.tar.gz
-    tar xzvf matplotlib-1.2.0rc1.tar.gz
-    cd matplotlib-1.2.0rc1
+    wget https://github.com/matplotlib/matplotlib/matplotlib-1.2.0rc2.tar.gz
+    tar xzvf matplotlib-1.2.0rc2.tar.gz
+    cd matplotlib-1.2.0rc2
     python3 setup.py build
     sudo python3 setup.py install
     mkdir -p ~/.matplotlib
     echo 'backend: Qt4Agg' > ~/.matplotlib/matplotlibrc
 
 ### Testen:
-   
+
 Zum Schluss kann man Matplotlib noch testen:
 
     $ ipython3 --pylab
     In[1]: plot([1, 2, 3])
-
