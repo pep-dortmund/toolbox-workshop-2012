@@ -1,19 +1,9 @@
 # To Do
- * Raum → nicht den kleinsten, am besten einen kleinen Hörsaal
- * VM
- * PR
- * FS-Seite, -Verteiler
- * PeP-Seite, -Verteiler
- * Facebook (Dritti-Gruppe, Pep-Gruppe)
- * eigene Website (bei PeP)
  * Repos
  * Slides/Skript → Slides: Keywords, Skript: Erklärungen
  * Beispiele (z.B. Trägheitsmoment, Aktivierung mit Neutronen)
  * Repo-Einführung → Hoster?
  * Live-Demos / Hands On?
-
-# Termine
-Als Zeitraum immer so ca. 10h-12h, dann Mittagspause und dann 13h-irgendwann z.B. 15h.
 
 ## Tag 1 (27.9.)
  * *nix
