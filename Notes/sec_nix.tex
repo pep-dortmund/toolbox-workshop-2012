@@ -1,6 +1,15 @@
 \chapter{*nix Grundlagen}
 \section{Unix Shell}
 \subsection{Dateisystem}
+  Das Dateisystem in Linux besteht aus \emph{einem} Baum.
+  Dies äußert sich im so genannten Dateipfad der den Weg von der Wurzel \texttt{/} zur eigentlichen Datei oder dem Ordner beschreibt.
+  Nach jedem Knoten, das heißt nach jedem Überordner setzt man wieder ein Slash bis man beim Dateinamen angekommen ist.
+
+  Es gibt immer ein aktuelles Verzeichnis, in dem man sich befindet; dieses wird 'working directory' genannt.
+  Will man aus dem working directory in ein anderes Verzeichnis so kann man dies durch eine relative oder absolute Pfadangabe tuen.
+  Bei einem absoluten Pfad geht man wieder von der Wurzel aus und beginnt ihn mit \texttt{/}.
+  Wählt man den relativen Pfad, der oft kürzer ist, insbesondere wenn man einfach nur in den Über- oder Unterordner möchte, so baut man die Pfadangabe ausgehend vom aktuellen Verzeichnis auf.
+
 \begin{itemize}
   \item \texttt{/} trennt Teile eines Pfads (Verzeichnisse und Dateien) (Windows: \texttt{\textbackslash})
   \item Das gesamte Dateisystem bildet \emph{einen} Baum, beginnend mit der Wurzel \texttt{/}
