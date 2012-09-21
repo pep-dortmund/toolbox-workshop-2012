@@ -1,6 +1,5 @@
-\chapter{*nix Grundlagen}
-\section{Unix Shell}
-\subsection{Dateisystem}
+\chapter{Unix Shell}
+\section{Dateisystem}
 Das Dateisystem in Linux besteht aus \emph{einem} Baum.
 Dies äußert sich im so genannten Dateipfad der den Weg von der Wurzel \texttt{/} zur eigentlichen Datei oder dem Ordner beschreibt.
 Nach jedem Knoten, das heißt nach jedem Überordner setzt man wieder ein Slash bis man beim Dateinamen angekommen ist.
@@ -24,7 +23,7 @@ Wählt man den relativen Pfad, der oft kürzer ist, insbesondere wenn man einfac
   \item Dateien, die mit \texttt{.} anfangen sind versteckt (z.B. \texttt{\textasciitilde/.vimrc}) und heißen Dotfiles
 \end{itemize}
 
-\subsection{Aufbau einer Eingabe}
+\section{Aufbau einer Eingabe}
 \texttt{\$ ls -l --all \textit{directory}\\
         \textit{output}\\
         \$}
@@ -47,14 +46,14 @@ Wählt man den relativen Pfad, der oft kürzer ist, insbesondere wenn man einfac
   \item meistens werden mehrere Argumente (z.B. Dateien) akzeptiert
 \end{itemize}
 
-\subsection{Befehle}
-\subsubsection{\texttt{man}}
+\section{Befehle}
+\subsection{\texttt{man}}
 \begin{itemize}
   \item \texttt{man \textit{topic}} für manual: zeigt die Hilfe für ein Programm
   \item Beispiel: \texttt{man man}
 \end{itemize}
 
-\subsubsection{\texttt{pwd}, \texttt{cd}}
+\subsection{\texttt{pwd}, \texttt{cd}}
 \begin{itemize}
   \item \texttt{pwd} für print working directory: zeigt das aktuelle Verzeichnis
   \item \texttt{cd \textit{directory}} für change directory: wechselt in das angegebene Verzeichnis
@@ -71,7 +70,7 @@ $ pwd
 \end{verbatim}
 \end{itemize}
 
-\subsubsection{ls}
+\subsection{ls}
 \begin{itemize}
   \item \texttt{ls [\textit{directory}]} für list: zeigt den Inhalt eines Verzeichnisses an
   \item \texttt{ls -l}: zeigt mehr Informationen über Dateien und Verzeichnisse
@@ -97,7 +96,7 @@ a/  b
 c
 \end{verbatim}
 
-\subsubsection{\texttt{mkdir}, \texttt{touch}}
+\subsection{\texttt{mkdir}, \texttt{touch}}
 \begin{itemize}
   \item \texttt{mkdir \textit{directory}} für make directory: erstellt ein neues Verzeichnis
   \item \texttt{mkdir -p \textit{directory}}: erstellt ein neues Verzeichnis und alle notwendigen Oberverzeichnisse
@@ -123,7 +122,7 @@ c/ file
 ./b/c:
 \end{verbatim}
 
-\subsubsection{\texttt{cp}, \texttt{mv}, \texttt{rm}, \texttt{rmdir}}
+\subsection{\texttt{cp}, \texttt{mv}, \texttt{rm}, \texttt{rmdir}}
 \begin{itemize}
   \item \texttt{cp \textit{source} \textit{destination}} für copy: kopiert eine Datei
   \item \texttt{cp -r \textit{source} \textit{destination}}: kopiert ein Verzeichnis rekursiv
@@ -151,7 +150,7 @@ $ ls
 c
 \end{verbatim}
 
-\subsubsection{\texttt{cat}, \texttt{less}, \texttt{grep}, \texttt{echo}}
+\subsection{\texttt{cat}, \texttt{less}, \texttt{grep}, \texttt{echo}}
 \begin{itemize}
   \item \texttt{cat [\textit{file}]} für concatenate: gibt den Inhalt einer (oder mehrerer) Dateien aus
   \item \texttt{less [\textit{file}]} (besser als \texttt{more}): zeigt eine Datei in einer navigablen Form an
@@ -161,15 +160,15 @@ c
   \item \texttt{echo \textit{text}}: gibt einen Text aus
 \end{itemize}
 
-\subsection{Nützliche Shell Features}
-\subsubsection{Tastaturkürzel}
+\section{Nützliche Shell Features}
+\subsection{Tastaturkürzel}
 \begin{itemize}
   \item \texttt{Ctrl-C}: beendet das laufende Programm
   \item \texttt{Ctrl-D}: EOF (end of file) eingeben, kann Programme beenden
   \item \texttt{Ctrl-L}: leert den Bildschirm
 \end{itemize}
 
-\subsubsection{Ein- und Ausgabe}
+\subsection{Ein- und Ausgabe}
 \begin{itemize}
   \item Programme haben einen Eingabe- und einen Ausgabestream
   \item diese können verschieden verwendet werden
@@ -197,7 +196,7 @@ abc
 bcd
 \end{verbatim}
 
-\subsubsection{Globbing (\texttt{*})}
+\subsection{Globbing (\texttt{*})}
 \begin{itemize}
   \item \texttt{*} wird ersetzt durch alle passenden Dateien
   \item Beispiel:
