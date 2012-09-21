@@ -1,5 +1,5 @@
 
-slides.pdf: slides.tex beamerthemeTU.sty sec_nix.tex sec_git.tex sec_python.tex
+slides.pdf: slides.tex beamerthemeTU.sty sec_intro.tex sec_unix.tex sec_git.tex sec_python.tex
 	lualatex --shell-escape slides.tex
 	lualatex --shell-escape slides.tex
 

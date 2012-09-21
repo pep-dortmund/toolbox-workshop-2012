@@ -1,19 +1,100 @@
 \chapter{Einleitung}
 \section{Motivation}
-\section{Vorgehen}
 \section{PeP et al.}
 
 \section{Installation}
-\subsection{Ubuntu 12.04}
-Die benötigten Programme und Libraries kann man unter Ubuntu per Kommandozeile installieren.
+\subsection{Windows 7}
+\subsubsection{Downloads}
+\begin{itemize}
+  \item \url{http://msysgit.googlecode.com/files/Git-1.7.11-preview20120710.exe}
+  \item \url{http://python.org/ftp/python/3.2.3/python-3.2.3.msi}
+	\item \url{http://sourceforge.net/projects/numpy/files/NumPy/1.6.2/y/download}
+  \item \url{http://sourceforge.net/projects/scipy/files/scipy/0.10.1/y/download}
+	\item \url{https://github.com/downloads/matplotlib/matplotlib/matplotlib-1.2.0rc2.win32-py3.2.exe}
+  \item \url{http://www.lfd.uci.edu/~gohlke/pythonlibs/2mbixi69/distribute-0.6.28.win32-py3.2.exe}
+	\item \url{http://www.lfd.uci.edu/~gohlke/pythonlibs/2mbixi69/pyreadline-2.0-dev1.win32-py3.2.exe}
+  \item \url{https://github.com/downloads/zeromq/pyzmq/pyzmq-2.2.0.win32-py3.2.msi}
+	\item \url{http://www.riverbankcomputing.co.uk/static/Downloads/PyQt4/PyQt-Py3.2-x86-gpl-4.9.4-1.exe}
+  \item \url{http://www.lfd.uci.edu/~gohlke/pythonlibs/2mbixi69/Pygments-1.5.win32-py3.2.exe}
+	\item \url{http://pypi.python.org/packages/any/i/ipython/ipython-0.13.py3-win32.exe}
+\end{itemize}
 
 \subsubsection{Git}
+\begin{itemize}
+  \item \texttt{Git-1.7.11-preview20120710.exe}
+  \item Pfad: \verb|C:\Programs\Git|
+  \item Use a TrueType font in all console windows
+\end{itemize}
+
+\subsubsection{Python}
+\begin{itemize}
+  \item \texttt{python-3.2.3.msi}
+  \item Pfad: \verb|C:\Programs\Python32|
+\end{itemize}
+
+\subsubsection{Numpy, Scipy, Matplotlib, Distribute, Pyreadline, Pyzmq, PyQt4, Pygments}
+\begin{itemize}
+  \item \texttt{numpy-1.6.2-win32-superpack-python3.2.exe}
+  \item \texttt{scipy-0.10.1-win32-superpack-python3.2.exe}
+  \item \texttt{matplotlib-1.2.0rc2.win32-py3.2.exe}
+  \item \texttt{distribute-0.6.28.win32-py3.2.exe}
+  \item \texttt{pyreadline-2.0-dev1.win32-py3.2.exe}
+  \item \texttt{pyzmq-2.2.0.win32-py3.2.msi}
+  \item \texttt{PyQt-Py3.2-x86-gpl-4.9.4-1.exe}
+  \item \texttt{Pygments-1.5.win32-py3.2.exe}
+\end{itemize}
+
+\subsubsection{Ipython}
+\begin{itemize}
+  \item \texttt{ipython-0.13.py3-win32.exe}
+  \item Rechstklick -> Als Administrator ausführen
+\end{itemize}
+
+\subsubsection{Letzte Schritte}
+\begin{itemize}
+  \item Start -> suche cmd.exe -> Rechtsklick -> Als Administrator ausführen
+  \item
+\begin{verbatim}
+> setx /M PATH "C:\Programs\Python32;%PATH%"
+> copy C:\Programs\Python32\python.exe C:\Programs\Python32\python3.exe
+\end{verbatim}
+\end{itemize}
+
+\subsubsection{Test}
+\begin{itemize}
+  \item Start -> Programme -> IPython (Py3.2 32 bit) -> IPython
+  \item \texttt{In[1]: plot([1, 2, 3])}
+\end{itemize}
+
+\subsection{Mac OS X}
+Am einfachsten ist die Installation unter OS X, wenn man Mac Ports verwendet.
+Auf der Website \url{http://www.macports.org/} gibt es ein entsprechendes .dmg.
+Dabei ist zu beachten, dass Apple's XCode installiert sein muss.
+Sollte kein XCode vorhanden sein, ist es auf der OS X Installations-DVD zu finden.
+
+Ist Mac Ports erst einmal installiert, ist die Installation der benötigten Programme und Bibliotheken denkbar einfach: In der Kommandozeile wird einfach
+\begin{verbatim}
+sudo port install git-core python27 py27-ipython py27-numpy \
+py27-scipy py27-matplotlib
+\end{verbatim}
+eingegeben.
+Das Ausführen von
+\begin{verbatim}
+sudo port select python python27
+\end{verbatim}
+sorgt dafür, dass die neu installierte Version als Standard verwendet wird und nicht die von Apple mitgelieferte.
+
+\subsection{Linux}
+\subsubsection{Ubuntu 12.04}
+Die benötigten Programme und Libraries kann man unter Ubuntu per Kommandozeile installieren.
+
+\paragraph{Git}
 Die Versionskontrolle 'Git' installiert man mit dem Befehl:
 \begin{verbatim}
 $ sudo apt-get install git
 \end{verbatim}
 
-\subsubsection{Python und Libraries}
+\paragraph{Python und Libraries}
 Zusätzlich zu Python 3 sollte man die Pythonbibliotheken NumPy und SciPy, die wissenschaftliches Rechnen deutlich vereinfachen, installieren.
 Bei iPython handelt es sich um eine interaktive Konsole für Python und seine Bibliotheken, mit der man, ähnlich wie mit der Kommandozeile, Befehle oder Skripte direkt ausführen kann.
 Der Installationsbefehl lautet:
@@ -21,17 +102,30 @@ Der Installationsbefehl lautet:
 $ sudo apt-get install python3 python3-numpy python3-scipy ipython3
 \end{verbatim}
 
-\subsubsection{Matplotlib}
+\paragraph{Matplotlib}
 Leider gibt es noch kein Paket für die Python3-Version von Matplotlib, dem Plotprogramm für Python.
 Der Sourcecode der Bibliothek kann aber so heruntergeladen und kompiliert werden:
 \begin{verbatim}
-$ sudo apt-get install python3-dev libpng-dev libfreetype6-dev python3-pyqt4
-$ wget https://github.com/matplotlib/matplotlib/matplotlib-1.2.0rc1.tar.gz
-$ tar xzvf matplotlib-1.2.0rc1.tar.gz
-$ cd matplotlib-1.2.0rc1
+$ sudo apt-get install python3-dev libpng-dev \
+libfreetype6-dev python3-pyqt4
+$ wget \
+https://github.com/matplotlib/matplotlib/matplotlib-1.2.0rc2.tar.gz
+$ tar xzvf matplotlib-1.2.0rc2.tar.gz
+$ cd matplotlib-1.2.0rc2
 $ python3 setup.py build
 $ sudo python3 setup.py install
-$ mkdir -p ~/.matplotlib && echo 'backend: Qt4Agg' > ~/.matplotlib/matplotlibrc
+$ mkdir -p ~/.matplotlib
+$ echo 'backend: Qt4Agg' > ~/.matplotlib/matplotlibrc
+\end{verbatim}
+
+\subsubsection{Arch Linux}
+\begin{verbatim}
+$ sudo pacman -S git python python-numpy python-scipy \
+ipython pyqt python-pyzmq python-pygments sip
+$ yaourt -S python-matplotlib-git
+$ sudo ln -s /usr/bin/ipython /usr/local/bin/ipython3
+$ mkdir -p ~/.matplotlib
+$ echo 'backend: Qt4Agg' > ~/.matplotlib/matplotlibrc
 \end{verbatim}
 
 \subsubsection{Test}
