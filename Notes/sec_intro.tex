@@ -44,7 +44,7 @@
   \item \texttt{Pygments-1.5.win32-py3.2.exe}
 \end{itemize}
 
-\subsubsection{Ipython}
+\subsubsection{IPython}
 \begin{itemize}
   \item \texttt{ipython-0.13.py3-win32.exe}
   \item Rechstklick -> Als Administrator ausführen
@@ -84,53 +84,49 @@ sudo port select python python27
 \end{verbatim}
 sorgt dafür, dass die neu installierte Version als Standard verwendet wird und nicht die von Apple mitgelieferte.
 
-\subsection{Linux}
-\subsubsection{Ubuntu 12.04}
-Die benötigten Programme und Libraries kann man unter Ubuntu per Kommandozeile installieren.
+\subsection{Ubuntu 12.04}
+Die benötigten Programme und Libraries kann man unter Ubuntu am schnellsten per Kommandozeile installieren.
 
 \paragraph{Git}
-Die Versionskontrolle 'Git' installiert man mit dem Befehl:
+Die Versionskontrolle 'Git' installiert man mit dem Befehl
 \begin{verbatim}
 $ sudo apt-get install git
 \end{verbatim}
 
 \paragraph{Python und Libraries}
-Zusätzlich zu Python 3 sollte man die Pythonbibliotheken NumPy und SciPy, die wissenschaftliches Rechnen deutlich vereinfachen, installieren.
-Bei iPython handelt es sich um eine interaktive Konsole für Python und seine Bibliotheken, mit der man, ähnlich wie mit der Kommandozeile, Befehle oder Skripte direkt ausführen kann.
-Der Installationsbefehl lautet:
+Zusätzlich zu Python 3 sollte man die Python-Bibliotheken NumPy und SciPy (für wissenschaftliche Berechnungen) installieren.
+Bei iPython handelt es sich um eine interaktive Konsole für Python, mit der man, ähnlich wie mit der Kommandozeile, Befehle oder Skripte ausführen kann.
+Der Installationsbefehl lautet
 \begin{verbatim}
-$ sudo apt-get install python3 python3-numpy python3-scipy ipython3
+$ sudo apt-get install python3 python3-numpy python3-scipy ipython3 python3-pyqt4
 \end{verbatim}
 
 \paragraph{Matplotlib}
-Leider gibt es noch kein Paket für die Python3-Version von Matplotlib, dem Plotprogramm für Python.
-Der Sourcecode der Bibliothek kann aber so heruntergeladen und kompiliert werden:
+Leider gibt es noch kein Paket für die Python3-Version von Matplotlib (zum Erstellen von Plots).
+Es gibt aber ein externes Repository mit der neuesten Version:
 \begin{verbatim}
-$ sudo apt-get install python3-dev libpng-dev \
-libfreetype6-dev python3-pyqt4
-$ wget \
-https://github.com/matplotlib/matplotlib/matplotlib-1.2.0rc2.tar.gz
-$ tar xzvf matplotlib-1.2.0rc2.tar.gz
-$ cd matplotlib-1.2.0rc2
-$ python3 setup.py build
-$ sudo python3 setup.py install
-$ mkdir -p ~/.matplotlib
-$ echo 'backend: Qt4Agg' > ~/.matplotlib/matplotlibrc
+$ sudo add-apt-repository ppa:takluyver/matplotlib-daily
+$ sudo apt-get update
+$ sudo apt-get install python3-matplotlib
 \end{verbatim}
 
-\subsubsection{Arch Linux}
+Auswahl von Qt für die grafische Oberfläche (um interaktive Plots anzeigen zu können):
 \begin{verbatim}
-$ sudo pacman -S git python python-numpy python-scipy \
-ipython pyqt python-pyzmq python-pygments sip
-$ yaourt -S python-matplotlib-git
-$ sudo ln -s /usr/bin/ipython /usr/local/bin/ipython3
 $ mkdir -p ~/.matplotlib
-$ echo 'backend: Qt4Agg' > ~/.matplotlib/matplotlibrc
+$ echo 'backend: Qt4Agg' >> ~/.matplotlib/matplotlibrc
 \end{verbatim}
 
-\subsubsection{Test}
-Zum Schluss kann man Matplotlib noch testen:
+Jetzt kann man noch testen, ob alles vernünftig funktioniert:
 \begin{verbatim}
 $ ipython3 --pylab
-In[1]: plot([1, 2, 3])
+In[1]: plot([1,2,3])
+\end{verbatim}
+Nach dieser Eingabe sollte ein Plot erscheinen.
+
+\subsection{Arch Linux}
+\begin{verbatim}
+$ sudo pacman -S git python python-numpy python-scipy ipython pyqt
+$ yaourt -S python-matplotlib-git
+$ mkdir -p ~/.matplotlib
+$ echo 'backend: Qt4Agg' >> ~/.matplotlib/matplotlibrc
 \end{verbatim}
