@@ -1,0 +1,9 @@
+# What we've learned and want to improve next time
+
+## Anmeldung
+Meiner Meinung nach ist es sehr schwierig, sich auf die Gruppe vorzubereiten zumal wir keinen Einblick in den Kenntnisstand haben. Ich schlage daher vor, beim nächsten mal ein Online-Anmeldeformular einzurichten mit dessen Hilfe wir (von den Teilnehmerzahlen mal ganz abgesehen) einen groben Einblick in die Fähigkeiten der Teilnehmer erhalten könnten. Mögliche Auswahlmöglichkeiten wären beispielsweise
+ * EINP/DAP gehört
+ * Kenne Python
+ * Kenne die Bibliotheken
+ * etc.
+Ich denke, das würde Einiges erleichtern. (Kevin)
