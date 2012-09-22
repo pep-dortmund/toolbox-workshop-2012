@@ -69,22 +69,21 @@ Jetzt kann man noch testen, ob alles vernünftig funktioniert:
 Nach dieser Eingabe sollte ein Plot erscheinen.
 
 \subsection{Mac OS X}
-Am einfachsten ist die Installation unter OS X, wenn man Mac Ports verwendet.
+Am einfachsten ist die Installation bei OS X unter Verwendung von Mac Ports.
 Auf der Website \url{http://www.macports.org/} gibt es ein entsprechendes .dmg.
-Dabei ist zu beachten, dass Apple's XCode installiert sein muss.
-Sollte kein XCode vorhanden sein, ist es auf der OS X Installations-DVD zu finden.
+Dabei ist zu beachten, dass XCode installiert sein muss. Sollte kein XCode vorhanden sein, ist es auf der OS X Installations-DVD zu finden oder kann über den AppStore heruntergeladen werden (OS X 10.7 vorausgesetzt).
 
-Ist Mac Ports erst einmal installiert, ist die Installation der benötigten Programme und Bibliotheken denkbar einfach: In der Kommandozeile wird einfach
+Ist Mac Ports erst einmal installiert, ist die Installation der benötigten Programme und Bibliotheken denkbar einfach. In der Kommandozeile (z.B. Terminal.app) wird einfach
 \begin{verbatim}
-sudo port install git-core python27 py27-ipython py27-numpy \
+$ sudo port install git-core python27 py27-ipython py27-numpy \
 py27-scipy py27-matplotlib
 \end{verbatim}
 eingegeben.
 Das Ausführen von
 \begin{verbatim}
-sudo port select python python27
+$ sudo port select python python27
 \end{verbatim}
-sorgt dafür, dass die neu installierte Version als Standard verwendet wird und nicht die von Apple mitgelieferte.
+sorgt dafür, dass die neu installierte Python-Version als Standard verwendet wird und nicht die von Apple mitgelieferte.
 
 \subsection{Ubuntu 12.04}
 Die benötigten Programme und Libraries kann man unter Ubuntu am schnellsten per Kommandozeile installieren.
