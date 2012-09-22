@@ -2,7 +2,8 @@
 
 % Font
 \usepackage{fontspec}
-\setmainfont{Latin Modern Roman}
+%\setmainfont{Helvetica Neue}
+\setmainfont{Latin Modern Roman} 
 \setsansfont{Latin Modern Sans}
 \setmonofont{Latin Modern Mono}
 
@@ -43,7 +44,7 @@
 % Code listings
 \usepackage{minted}
 
-\newcommand{\mytitle}[1]{
+\newcommand{\mytitle}[2]{
     % Fancy headlines
     \pagestyle{fancy}
     \fancyhead[R]{\textit{\nouppercase{\leftmark}}}
@@ -76,13 +77,13 @@
             \Large
                 TU Dortmund
             \normalsize \\
-            #1 \\[.3125cm]
+                Version #1 – \small #2 \\[.3125cm]
             
             \rule{\linewidth}{0.625mm} \\ [1.125cm]
         \end{flushright}
 
         \begin{center}
-            \large Igor Babuschkin\footnote{\href{mailto:igor.babuschkin@udo.edu}{igor.babuschkin@udo.edu}} • Kevin Dungs\footnote{\href{mailto:kevin.dungs@udo.edu}{kevin.dungs@udo.edu}} • Christian Gerhorst\footnote{\href{mailto:christiangerhorst@gmail.com}{christiangerhorst@gmail.com}} \\ Peter Lorenz\footnote{\href{mailto:peter.lorenz@udo.edu}{peter.lorenz@udo.edu}} • Ismo Toijala\footnote{\href{mailto:ismo.toijala@udo.edu}{ismo.toijala@udo.edu}}
+            \Large Igor Babuschkin\footnote{\href{mailto:igor.babuschkin@udo.edu}{igor.babuschkin@udo.edu}} • Kevin Dungs\footnote{\href{mailto:kevin.dungs@udo.edu}{kevin.dungs@udo.edu}} • Christian Gerhorst\footnote{\href{mailto:christiangerhorst@gmail.com}{christiangerhorst@gmail.com}} \\ Peter Lorenz\footnote{\href{mailto:peter.lorenz@udo.edu}{peter.lorenz@udo.edu}} • Ismo Toijala\footnote{\href{mailto:ismo.toijala@udo.edu}{ismo.toijala@udo.edu}}
         \end{center}
 
         
