@@ -95,10 +95,10 @@ $ sudo apt-get install git
 
 \paragraph{Python und Libraries}
 Zusätzlich zu Python 3 sollte man die Python-Bibliotheken NumPy und SciPy (für wissenschaftliche Berechnungen) installieren.
-Bei iPython handelt es sich um eine interaktive Konsole für Python, mit der man, ähnlich wie mit der Kommandozeile, Befehle oder Skripte ausführen kann.
+Bei IPython handelt es sich um eine interaktive Konsole für Python, mit der man, ähnlich wie mit der Kommandozeile, Befehle oder Skripte ausführen kann.
 Der Installationsbefehl lautet
 \begin{verbatim}
-$ sudo apt-get install python3 python3-numpy python3-scipy ipython3 python3-pyqt4
+$ sudo apt-get install python3 python3-numpy python3-scipy ipython3 python3-pyqt4 python3-zmq python3-pygments python3-sip
 \end{verbatim}
 
 \paragraph{Matplotlib}
@@ -113,7 +113,7 @@ $ sudo apt-get install python3-matplotlib
 Auswahl von Qt für die grafische Oberfläche (um interaktive Plots anzeigen zu können):
 \begin{verbatim}
 $ mkdir -p ~/.matplotlib
-$ echo 'backend: Qt4Agg' >> ~/.matplotlib/matplotlibrc
+$ echo 'backend: Qt4Agg' > ~/.matplotlib/matplotlibrc
 \end{verbatim}
 
 Jetzt kann man noch testen, ob alles vernünftig funktioniert:
@@ -125,8 +125,8 @@ Nach dieser Eingabe sollte ein Plot erscheinen.
 
 \subsection{Arch Linux}
 \begin{verbatim}
-$ sudo pacman -S git python python-numpy python-scipy ipython pyqt
+$ sudo pacman -S git python python-numpy python-scipy ipython pyqt sip python-pygments python-pyzmq
 $ yaourt -S python-matplotlib-git
 $ mkdir -p ~/.matplotlib
-$ echo 'backend: Qt4Agg' >> ~/.matplotlib/matplotlibrc
+$ echo 'backend: Qt4Agg' > ~/.matplotlib/matplotlibrc
 \end{verbatim}

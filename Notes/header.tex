@@ -3,7 +3,7 @@
 % Font
 \usepackage{fontspec}
 %\setmainfont{Helvetica Neue}
-\setmainfont{Latin Modern Roman} 
+\setmainfont{Latin Modern Roman}
 \setsansfont{Latin Modern Sans}
 \setmonofont{Latin Modern Mono}
 
@@ -45,47 +45,49 @@
 \usepackage{minted}
 
 \newcommand{\mytitle}[2]{
-    % Fancy headlines
-    \pagestyle{fancy}
-    \fancyhead[R]{\textit{\nouppercase{\leftmark}}}
-    \fancyhead[L]{\textit{\nouppercase{\rightmark}}}
-    \fancyfoot[R]{\thepage}
-    \cfoot{}
-    % PDF Information
-    \hypersetup{
-        pdfsubject={PeP et al. Toolbox Workshop},
-        pdftitle={Toolbox Workshop},
-        pdfauthor={Igor Babuschkin, Kevin Dungs, Ismo Toijala, Christian Gerhorst, Peter Lorenz},
-    }
+  % Fancy headlines
+  \pagestyle{fancy}
+  \fancyhead[R]{\textit{\nouppercase{\leftmark}}}
+  \fancyhead[L]{\textit{\nouppercase{\rightmark}}}
+  \fancyfoot[R]{\thepage}
+  \cfoot{}
+  % PDF Information
+  \hypersetup{
+    pdfsubject={PeP et al. Toolbox Workshop},
+    pdftitle={Toolbox Workshop},
+    pdfauthor={Igor Babuschkin, Kevin Dungs, Ismo Toijala, Christian Gerhorst, Peter Lorenz},
+  }
 
-    \begin{titlepage}
-        \begin{center}
-                \Huge\color{Red}{\textbf{DRAFT}}
-            \end{center}
+  \begin{titlepage}
+    \begin{center}
+      \Huge\color{Red}{\textbf{DRAFT}}
+    \end{center}
 
-        \begin{flushright}
-            \rule{\linewidth}{1.625mm} \\[1cm]
-            
-            \Large
-                \textbf{PeP et al.} \\[0.3125cm]
-            \normalsize
+    \begin{flushright}
+      \rule{\linewidth}{1.625mm} \\[1cm]
+      
+      \Large
+        \textbf{PeP et al.} \\[0.3125cm]
+      \normalsize
 
-            \Huge
-                \textbf{Toolbox Workshop}
-            \normalsize \\[1.625cm]
-        
-            \Large
-                TU Dortmund
-            \normalsize \\
-                Version #1 – \small #2 \\[.3125cm]
-            
-            \rule{\linewidth}{0.625mm} \\ [1.125cm]
-        \end{flushright}
+      \Huge
+        \textbf{Toolbox Workshop}
+      \normalsize \\[1.625cm]
+  
+      \Large
+        TU Dortmund
+      \normalsize \\
+        Version #1 – \small #2 \\[.3125cm]
+      
+      \rule{\linewidth}{0.625mm} \\ [1.125cm]
+    \end{flushright}
 
-        \begin{center}
-            \Large Igor Babuschkin\footnote{\href{mailto:igor.babuschkin@udo.edu}{igor.babuschkin@udo.edu}} • Kevin Dungs\footnote{\href{mailto:kevin.dungs@udo.edu}{kevin.dungs@udo.edu}} • Christian Gerhorst\footnote{\href{mailto:christiangerhorst@gmail.com}{christiangerhorst@gmail.com}} \\ Peter Lorenz\footnote{\href{mailto:peter.lorenz@udo.edu}{peter.lorenz@udo.edu}} • Ismo Toijala\footnote{\href{mailto:ismo.toijala@udo.edu}{ismo.toijala@udo.edu}}
-        \end{center}
-
-        
-    \end{titlepage}
+    \begin{center}
+      \Large Igor Babuschkin\footnote{\href{mailto:igor.babuschkin@udo.edu}{igor.babuschkin@udo.edu}}
+           • Kevin Dungs\footnote{\href{mailto:kevin.dungs@udo.edu}{kevin.dungs@udo.edu}}
+           • Christian Gerhorst\footnote{\href{mailto:christiangerhorst@gmail.com}{christiangerhorst@gmail.com}} \\
+             Peter Lorenz\footnote{\href{mailto:peter.lorenz@udo.edu}{peter.lorenz@udo.edu}}
+           • Ismo Toijala\footnote{\href{mailto:ismo.toijala@udo.edu}{ismo.toijala@udo.edu}}
+    \end{center}
+  \end{titlepage}
 }
