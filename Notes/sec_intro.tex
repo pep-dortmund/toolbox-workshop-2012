@@ -7,6 +7,7 @@ Ein \verb|\| am Ende einer Eingabezeile bedeutet, dass die Zeile aus Platzgründ
 \subsection{Windows 7}
 \subsubsection{Downloads}
   % http://msysgit.googlecode.com/files/Git-1.7.11-preview20120710.exe
+  % http://sourceforge.net/projects/kdiff3/files/kdiff3/0.9.97/KDiff3-32bit-Setup_0.9.97.exe/download
   % http://python.org/ftp/python/3.2.3/python-3.2.3.msi
   % http://sourceforge.net/projects/numpy/files/NumPy/1.6.2/y/download
   % http://sourceforge.net/projects/scipy/files/scipy/0.10.1/y/download
@@ -20,11 +21,18 @@ Ein \verb|\| am Ende einer Eingabezeile bedeutet, dass die Zeile aus Platzgründ
   Ein Archiv mit den benötigten Installationsdateien kann unter \\
   \url{http://files.babushk.in/toolbox.zip} \\
   heruntergeladen werden.
+
 \subsubsection{Git}
 \begin{itemize}
   \item \texttt{Git-1.7.11-preview20120710.exe}
   \item Pfad: \verb|C:\Programs\Git|
   \item Use a TrueType font in all console windows
+\end{itemize}
+
+\subsubsection{KDiff3}
+\begin{itemize}
+  \item \texttt{KDiff3-32bit-Setup\_0.9.97.exe}
+  \item Pfad: \verb|C:\Programs\KDiff3|
 \end{itemize}
 
 \subsubsection{Python}
@@ -60,6 +68,20 @@ setx /M PATH "C:\Programs\Python32;%PATH%"
 copy C:\Programs\Python32\python.exe C:\Programs\Python32\python3.exe
 \end{verbatim}
 \end{itemize}
+Jetzt muss Git noch eingestellt werden.
+In Git Bash ausführen (richtige Daten eintragen):
+\begin{verbatim}
+git config --global user.email "ismo.toijala@udo.edu"
+git config --global user.name "Ismo Toijala"
+echo "
+[merge]
+    tool = kdiff3
+    
+[mergetool "kdiff3"]
+    path = C:/Programs/KDiff3/kdiff3.exe
+    keepBackup = false
+    trustExitCode = false" >> ~/.gitconfig
+\end{verbatim}
 
 \subsubsection{Test}
 Jetzt kann man noch testen, ob alles vernünftig funktioniert:
@@ -77,7 +99,7 @@ Dabei ist zu beachten, dass XCode installiert sein muss. Sollte kein XCode vorha
 Ist Mac Ports erst einmal installiert, ist die Installation der benötigten Programme und Bibliotheken denkbar einfach. In der Kommandozeile (z.B. Terminal.app) wird einfach
 \begin{verbatim}
 $ sudo port install git-core python27 py27-ipython py27-numpy \
-py27-scipy py27-matplotlib
+py27-scipy py27-matplotlib kdiff3
 \end{verbatim}
 eingegeben.
 Das Ausführen von
@@ -92,7 +114,7 @@ Die benötigten Programme und Libraries kann man unter Ubuntu am schnellsten per
 \subsubsection{Git}
 Die Versionskontrolle 'Git' installiert man mit dem Befehl
 \begin{verbatim}
-sudo apt-get install git
+sudo apt-get install git kdiff3
 \end{verbatim}
 
 \subsubsection{Python und Bibliotheken}
@@ -127,7 +149,15 @@ mkdir -p ~/.matplotlib
 echo 'backend: Qt4Agg' > ~/.matplotlib/matplotlibrc
 \end{verbatim}
 
-\subsection{Testen}
+\subsection{Einstellungen und Testen}
+Git einstellen (richtige Daten eintragen):
+\begin{verbatim}
+git config --global user.email "ismo.toijala@udo.edu"
+git config --global user.name "Ismo Toijala"
+echo "
+[merge]
+    tool = kdiff3" >> ~/.gitconfig
+\end{verbatim}
 Jetzt kann man noch testen, ob alles vernünftig funktioniert:
 \begin{verbatim}
 ipython3 --pylab
