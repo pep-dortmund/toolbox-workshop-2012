@@ -46,11 +46,17 @@
 
 \newcommand{\mytitle}[2]{
   % Fancy headlines
+  \fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[R]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+  }
   \pagestyle{fancy}
+  \fancyhf{}
   \fancyhead[R]{\textit{\nouppercase{\leftmark}}}
   \fancyhead[L]{\textit{\nouppercase{\rightmark}}}
   \fancyfoot[R]{\thepage}
-  \cfoot{}
+
   % PDF Information
   \hypersetup{
     pdfsubject={PeP et al. Toolbox Workshop},
