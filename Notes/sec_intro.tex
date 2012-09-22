@@ -3,6 +3,7 @@
 \section{PeP et al.}
 
 \section{Installation}
+Ein \verb|\| am Ende einer Eingabezeile bedeutet, dass die Zeile aus Platzgründen gebrochen wurde. Man sollte das \verb|\| weglassen und die Zeile ganz, ohne Umbruch eingeben.
 \subsection{Windows 7}
 \subsubsection{Downloads}
   % http://msysgit.googlecode.com/files/Git-1.7.11-preview20120710.exe
@@ -55,8 +56,8 @@
   \item Start $\rightarrow$ suche cmd.exe $\rightarrow$ Rechtsklick $\rightarrow$ Als Administrator ausführen
   \item
 \begin{verbatim}
-> setx /M PATH "C:\Programs\Python32;%PATH%"
-> copy C:\Programs\Python32\python.exe C:\Programs\Python32\python3.exe
+setx /M PATH "C:\Programs\Python32;%PATH%"
+copy C:\Programs\Python32\python.exe C:\Programs\Python32\python3.exe
 \end{verbatim}
 \end{itemize}
 
@@ -64,7 +65,7 @@
 Jetzt kann man noch testen, ob alles vernünftig funktioniert:
 \begin{itemize}
   \item Start $\rightarrow$ Programme $\rightarrow$ IPython (Py3.2 32 bit) $\rightarrow$ IPython
-  \item \texttt{In[1]: plot([1, 2, 3])}
+  \item \texttt{plot([1, 2, 3])}
 \end{itemize}
 Nach dieser Eingabe sollte ein Plot erscheinen.
 
@@ -91,7 +92,7 @@ Die benötigten Programme und Libraries kann man unter Ubuntu am schnellsten per
 \subsubsection{Git}
 Die Versionskontrolle 'Git' installiert man mit dem Befehl
 \begin{verbatim}
-$ sudo apt-get install git
+sudo apt-get install git
 \end{verbatim}
 
 \subsubsection{Python und Bibliotheken}
@@ -99,7 +100,7 @@ Zusätzlich zu Python 3 sollte man die Python-Bibliotheken NumPy und SciPy (für
 Bei IPython handelt es sich um eine interaktive Konsole für Python, mit der man, ähnlich wie mit der Kommandozeile, Befehle oder Skripte ausführen kann.
 Der Installationsbefehl lautet
 \begin{verbatim}
-$ sudo apt-get install python3 python3-numpy python3-scipy ipython3 \
+sudo apt-get install python3 python3-numpy python3-scipy ipython3 \
 python3-pyqt4 python3-zmq python3-pygments python3-sip
 \end{verbatim}
 
@@ -107,29 +108,29 @@ python3-pyqt4 python3-zmq python3-pygments python3-sip
 Leider gibt es noch kein Paket für die Python3-Version von Matplotlib (zum Erstellen von Plots).
 Es gibt aber ein externes Repository mit der neuesten Version:
 \begin{verbatim}
-$ sudo add-apt-repository ppa:takluyver/matplotlib-daily
-$ sudo apt-get update
-$ sudo apt-get install python3-matplotlib
+sudo add-apt-repository ppa:takluyver/matplotlib-daily
+sudo apt-get update
+sudo apt-get install python3-matplotlib
 \end{verbatim}
 Auswahl von Qt für die grafische Oberfläche (um interaktive Plots anzeigen zu können):
 \begin{verbatim}
-$ mkdir -p ~/.matplotlib
-$ echo 'backend: Qt4Agg' > ~/.matplotlib/matplotlibrc
+mkdir -p ~/.matplotlib
+echo 'backend: Qt4Agg' > ~/.matplotlib/matplotlibrc
 \end{verbatim}
 
 \subsection{Arch Linux}
 \begin{verbatim}
-$ sudo pacman -S git python python-numpy python-scipy \
+sudo pacman -S git python python-numpy python-scipy \
 ipython pyqt sip python-pygments python-pyzmq
-$ yaourt -S python-matplotlib-git
-$ mkdir -p ~/.matplotlib
-$ echo 'backend: Qt4Agg' > ~/.matplotlib/matplotlibrc
+yaourt -S python-matplotlib-git
+mkdir -p ~/.matplotlib
+echo 'backend: Qt4Agg' > ~/.matplotlib/matplotlibrc
 \end{verbatim}
 
 \subsection{Testen}
 Jetzt kann man noch testen, ob alles vernünftig funktioniert:
 \begin{verbatim}
-$ ipython3 --pylab
-In[1]: plot([1,2,3])
+ipython3 --pylab
+plot([1,2,3])
 \end{verbatim}
 Nach dieser Eingabe sollte ein Plot erscheinen.
