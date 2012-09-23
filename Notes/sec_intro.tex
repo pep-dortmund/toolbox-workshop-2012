@@ -1,32 +1,31 @@
 \chapter{Einleitung}
 \section{Motivation}
+\url{http://www.americanscientist.org/issues/pub/wheres-the-real-bottleneck-in-scientific-computing}
 \section{PeP et al.}
 
 \section{Installation}
-Ein \verb|\| am Ende einer Eingabezeile bedeutet, dass die Zeile aus Platzgründen gebrochen wurde. Man sollte das \verb|\| weglassen und die Zeile ganz, ohne Umbruch eingeben.
+Ein \verb|\| am Ende einer Eingabezeile bedeutet, dass die Zeile aus Platzgründen gebrochen wurde.
+Man sollte das \verb|\| weglassen und die Zeile ganz, ohne Umbruch eingeben.
+Der Abschnitt \ref{install-test} gilt für alle Unix-artigen Betriebssysteme, also sowohl Linux als auch Mac OS X.
 \subsection{Windows 7}
 \subsubsection{Downloads}
-  % http://msysgit.googlecode.com/files/Git-1.7.11-preview20120710.exe
-  % http://sourceforge.net/projects/kdiff3/files/kdiff3/0.9.97/KDiff3-32bit-Setup_0.9.97.exe/download
-  % http://python.org/ftp/python/3.2.3/python-3.2.3.msi
-  % http://sourceforge.net/projects/numpy/files/NumPy/1.6.2/y/download
-  % http://sourceforge.net/projects/scipy/files/scipy/0.10.1/y/download
-  % https://github.com/downloads/matplotlib/matplotlib/matplotlib-1.2.0rc2.win32-py3.2.exe
-  % http://www.lfd.uci.edu/~gohlke/pythonlibs/2mbixi69/distribute-0.6.28.win32-py3.2.exe
-  % http://www.lfd.uci.edu/~gohlke/pythonlibs/2mbixi69/pyreadline-2.0-dev1.win32-py3.2.exe
-  % https://github.com/downloads/zeromq/pyzmq/pyzmq-2.2.0.win32-py3.2.msi
-  % http://www.riverbankcomputing.co.uk/static/Downloads/PyQt4/PyQt-Py3.2-x86-gpl-4.9.4-1.exe
-  % http://www.lfd.uci.edu/~gohlke/pythonlibs/2mbixi69/Pygments-1.5.win32-py3.2.exe
-  % http://pypi.python.org/packages/any/i/ipython/ipython-0.13.py3-win32.exe
-  Ein Archiv mit den benötigten Installationsdateien kann unter \\
-  \url{http://files.babushk.in/toolbox.zip} \\
-  heruntergeladen werden.
+Ein Archiv mit den benötigten Installationsdateien kann unter \\
+\url{http://files.babushk.in/toolbox.zip} \\
+heruntergeladen werden.
 
 \subsubsection{Git}
 \begin{itemize}
   \item \texttt{Git-1.7.11-preview20120710.exe}
   \item Pfad: \verb|C:\Programs\Git|
   \item Use a TrueType font in all console windows
+\end{itemize}
+
+\subsubsection{Make}
+Diese Dateien in \verb|C:\Programs\Git\bin| kopieren:
+\begin{itemize}
+  \item \texttt{make.exe}
+  \item \texttt{msys-iconv-2.dll}
+  \item \texttt{msys-intl-8.dll}
 \end{itemize}
 
 \subsubsection{KDiff3}
@@ -68,11 +67,13 @@ setx /M PATH "C:\Programs\Python32;%PATH%"
 copy C:\Programs\Python32\python.exe C:\Programs\Python32\python3.exe
 \end{verbatim}
 \end{itemize}
-Jetzt muss Git noch eingestellt werden.
+Jetzt müssen Git und Matplotlib noch eingestellt werden.
 In Git Bash ausführen (richtige Daten eintragen):
 \begin{verbatim}
 git config --global user.email "ismo.toijala@udo.edu"
 git config --global user.name "Ismo Toijala"
+mkdir -p ~/.matplotlib
+echo 'backend : Qt4Agg' > ~/.matplotlib/matplotlibrc
 echo "
 [merge]
     tool = kdiff3
@@ -86,7 +87,7 @@ echo "
 \subsubsection{Test}
 Jetzt kann man noch testen, ob alles vernünftig funktioniert:
 \begin{itemize}
-  \item Start $\rightarrow$ Programme $\rightarrow$ IPython (Py3.2 32 bit) $\rightarrow$ IPython
+  \item Start $\rightarrow$ Programme $\rightarrow$ IPython (Py3.2 32 bit) $\rightarrow$ pylab
   \item \texttt{plot([1, 2, 3])}
 \end{itemize}
 Nach dieser Eingabe sollte ein Plot erscheinen.
@@ -96,15 +97,16 @@ Am einfachsten ist die Installation bei OS X unter Verwendung von Mac Ports.
 Auf der Website \url{http://www.macports.org/} gibt es ein entsprechendes .dmg.
 Dabei ist zu beachten, dass XCode installiert sein muss. Sollte kein XCode vorhanden sein, ist es auf der OS X Installations-DVD zu finden oder kann über den AppStore heruntergeladen werden (OS X 10.7 vorausgesetzt).
 
-Ist Mac Ports erst einmal installiert, ist die Installation der benötigten Programme und Bibliotheken denkbar einfach. In der Kommandozeile (z.B. Terminal.app) wird einfach
+Ist Mac Ports erst einmal installiert, ist die Installation der benötigten Programme und Bibliotheken denkbar einfach.
+In der Kommandozeile (z.B. Terminal.app) wird einfach
 \begin{verbatim}
-$ sudo port install git-core python27 py27-ipython py27-numpy \
-py27-scipy py27-matplotlib kdiff3
+sudo port install gmake git-core python27 py27-ipython py27-numpy \
+py27-scipy py27-matplotlib kdiff3 py27-pyqt4 py27-sip py27-pygments
 \end{verbatim}
 eingegeben.
 Das Ausführen von
 \begin{verbatim}
-$ sudo port select python python27
+sudo port select python python27
 \end{verbatim}
 sorgt dafür, dass die neu installierte Python-Version als Standard verwendet wird und nicht die von Apple mitgelieferte.
 
@@ -114,7 +116,7 @@ Die benötigten Programme und Libraries kann man unter Ubuntu am schnellsten per
 \subsubsection{Git}
 Die Versionskontrolle 'Git' installiert man mit dem Befehl
 \begin{verbatim}
-sudo apt-get install git kdiff3
+sudo apt-get install make git kdiff3
 \end{verbatim}
 
 \subsubsection{Python und Bibliotheken}
@@ -134,26 +136,22 @@ sudo add-apt-repository ppa:takluyver/matplotlib-daily
 sudo apt-get update
 sudo apt-get install python3-matplotlib
 \end{verbatim}
-Auswahl von Qt für die grafische Oberfläche (um interaktive Plots anzeigen zu können):
-\begin{verbatim}
-mkdir -p ~/.matplotlib
-echo 'backend: Qt4Agg' > ~/.matplotlib/matplotlibrc
-\end{verbatim}
 
 \subsection{Arch Linux}
 \begin{verbatim}
-sudo pacman -S git python python-numpy python-scipy \
+sudo pacman -S make git python python-numpy python-scipy \
 ipython pyqt sip python-pygments python-pyzmq kdiff3
 yaourt -S python-matplotlib-git
-mkdir -p ~/.matplotlib
-echo 'backend: Qt4Agg' > ~/.matplotlib/matplotlibrc
 \end{verbatim}
 
 \subsection{Einstellungen und Testen}
-Git einstellen (richtige Daten eintragen):
+\label{install-test}
+Git und Matplotlib einstellen (richtige Daten eintragen):
 \begin{verbatim}
 git config --global user.email "ismo.toijala@udo.edu"
 git config --global user.name "Ismo Toijala"
+mkdir -p ~/.matplotlib
+echo 'backend : Qt4Agg' > ~/.matplotlib/matplotlibrc
 echo "
 [merge]
     tool = kdiff3" >> ~/.gitconfig
