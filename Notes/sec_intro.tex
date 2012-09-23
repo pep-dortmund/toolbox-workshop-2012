@@ -20,6 +20,14 @@ heruntergeladen werden.
   \item Use a TrueType font in all console windows
 \end{itemize}
 
+\subsubsection{Make}
+Diese Dateien in \verb|C:\Programs\Git\bin| kopieren:
+\begin{itemize}
+  \item \texttt{make.exe}
+  \item \texttt{msys-iconv-2.dll}
+  \item \texttt{msys-intl-8.dll}
+\end{itemize}
+
 \subsubsection{KDiff3}
 \begin{itemize}
   \item \texttt{KDiff3-32bit-Setup\_0.9.97.exe}
@@ -92,7 +100,7 @@ Dabei ist zu beachten, dass XCode installiert sein muss. Sollte kein XCode vorha
 Ist Mac Ports erst einmal installiert, ist die Installation der benötigten Programme und Bibliotheken denkbar einfach.
 In der Kommandozeile (z.B. Terminal.app) wird einfach
 \begin{verbatim}
-sudo port install git-core python27 py27-ipython py27-numpy \
+sudo port install gmake git-core python27 py27-ipython py27-numpy \
 py27-scipy py27-matplotlib kdiff3 py27-pyqt4 py27-sip py27-pygments
 \end{verbatim}
 eingegeben.
@@ -108,7 +116,7 @@ Die benötigten Programme und Libraries kann man unter Ubuntu am schnellsten per
 \subsubsection{Git}
 Die Versionskontrolle 'Git' installiert man mit dem Befehl
 \begin{verbatim}
-sudo apt-get install git kdiff3
+sudo apt-get install make git kdiff3
 \end{verbatim}
 
 \subsubsection{Python und Bibliotheken}
@@ -131,7 +139,7 @@ sudo apt-get install python3-matplotlib
 
 \subsection{Arch Linux}
 \begin{verbatim}
-sudo pacman -S git python python-numpy python-scipy \
+sudo pacman -S make git python python-numpy python-scipy \
 ipython pyqt sip python-pygments python-pyzmq kdiff3
 yaourt -S python-matplotlib-git
 \end{verbatim}
