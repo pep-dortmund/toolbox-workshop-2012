@@ -36,27 +36,38 @@ scipy
         curve_fit
     stats
         sem
+        linregress
     constants
 
 uncertainties
     uarray
+    umath
     ufloat
     nominal_values
     std_devs
     
 matplotlib
     ax
+        get_legend_handles_labels
         plot
         errorbar
         xaxis/yaxis
             set_view_intervall
             set_major_formatter
             set_ticks
+            set_ticklabels
         axvline
         axhline
         legend
         set_x/y_scale
         set_x/y_label
+        twinx
+        (polar)ax.set_thetagrids
+        ax.setrgrids
+   plt
+   handles
+   labels
    fig
-        add_subplot
+        add_subplot, projection='polar'
+        text
         tight_layout
