@@ -40,21 +40,76 @@ In einer interaktiven Sitzung (z.B. IPython) können zum Einstieg einfache mathe
 In [1]: 1+2
 Out[1]: 3
 
-In [2]: 1-2
-Out[2]: -1
-
-In [3]: 1*2
-Out[3]: 2
-
-In [4]: 1/2
-Out[4]: 0.5
+In [2]: 1*2
+Out[2]: 2
 \end{verbatim}
 
-\subsection{Operatoren}
-Wie aus dem obigen Beispiel hervorgeht, gibt es die mathematischen Operatoren \texttt{+},\texttt{-},\texttt{*} und \texttt{/}.
-Die folgenden Tabellen geben einen Überblick über die weiteren Operatoren.
-
 \subsection{Variablen}
+Natürlich gibt es Variablen. Ihre Verwendung ist denkbar einfach:
+\begin{verbatim}
+In [3]: a = 2
+
+In [4]: a
+Out[4]: 2
+
+In [5]: b = 1+1
+
+In [6]: b
+Out[6]: 2
+\end{verbatim}
+Variablennamen können Buchstaben, Zahlen und Unterstrichte enthalten, dürfen jedoch nicht mit einer Ziffer beginnen.
+
+\subsection{Operatoren}
+Wie aus dem obigen Beispiel hervorgeht, gibt es in Python \textbf{mathematische Operatoren}. In \autoref{tab:op_mat} sind diese dargestellt.
+
+\begin{table}[H]
+  \centering{}
+  \caption{Mathematische Operatoren}
+  \label{tab:op_mat}
+  \begin{tabular}{c l c}
+    \toprule
+    Op. & Funktion & Beispiel \\
+    \midrule
+    \texttt{+} & Addition & \texttt{1+2} \rightarrow \texttt{3} \\
+    \texttt{-} & Subtraktion & \texttt{1-2} \rightarrow \texttt{-1} \\
+    \texttt{*} & Multiplikation & \texttt{1*2} \rightarrow \texttt{2} \\
+    \texttt{/} & Division & \texttt{1/2} \rightarrow \texttt{0.5} \\
+    \texttt{\%} & Modulo & \texttt{11\%2} \rightarrow \texttt{1} \\
+    \texttt{**} & Exponent & \texttt{2**3} \rightarrow \texttt{8} \\
+    \texttt{//} & Ganzzahldivision & \texttt{5//2} \rightarrow \texttt{1} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\textbf{Zuweisungsoperatoren} setzen sich aus einem mathematischen Operator und einem Gleichheitszeichen zusammen. Mit ihnen kann gleichzeitig eine Berechnung und eine Zuweisung durchgeführt werden, zum Beispiel:
+\begin{verbatim}
+In [7]: a = 2
+
+In [7]: a *= 3
+
+In [8]: a
+Out[8]: 6
+\end{verbatim}
+
+Mit Hilfe von \textbf{Vergleichsoperatoren} (siehe \autoref{tab:op_comp}) lassen sich Vergleiche durchführen.
+
+\begin{table}[H]
+  \centering{}
+  \caption{Vergleichsoperatoren}
+  \label{tab:op_comp}
+  \begin{tabular}{c l c}
+    \toprule
+    Op. & Funktion & Beispiel \\
+    \midrule
+    \texttt{==} & Gleich & \texttt{1==1} \rightarrow \texttt{True} \\
+    \texttt{!=, <>} & Ungleich & \texttt{2!=1} \rightarrow \texttt{True} \\
+    \texttt{>} & Größer & \texttt{2>1} \rightarrow \texttt{True} \\
+    \texttt{<} & Kleiner & \texttt{1<2} \rightarrow \texttt{True} \\
+    \texttt{>=} & Größer oder gleich & \texttt{2>=1} \rightarrow \texttt{True} \\
+    \texttt{<=} & Kleiner oder gleich & \texttt{1<=2} \rightarrow \texttt{True} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \section{Bibliotheken}
 \subsection{Numpy}
