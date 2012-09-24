@@ -1,0 +1,54 @@
+numpy
+    shape
+    sum
+    sqrt
+    mean
+    array
+    ndarray
+    loadtxt
+    isfinite
+    asscalar
+    split
+    linspace
+    ediff1d
+    savetxt
+    arrange
+    log
+    polyval
+    pi
+    ma
+        masked_array
+    save
+    abs
+    argmax
+    arrange
+    sin
+    cos
+    vectorize
+    amax
+    load
+    radians
+    max
+    argmax
+    nan
+scipy 
+    optimize
+        curve_fit
+    stats
+        sem
+    constants
+
+uncertainties
+    uarray
+    ufloat
+    nominal_values
+    std_devs
+    
+matplotlib
+    ax
+        plot
+        xaxis/yaxis
+            set_view_intervall
+            set_major_formatter
+            set_sx/ylabel
+            
