@@ -2,7 +2,6 @@ python
     open
     file
         write
-    str
     range
     len
     string
@@ -11,80 +10,67 @@ python
     list
         append
         index
-    int
-    float
     dict
     sorted
     decimal
     math
-		floor
-		ciel
+        floor
+        ciel
+    convert
+        str
+        int
+        float
 
 numpy
-    arange
+    functions
+        sqrt
+        exp
+        log
+        abs
+        sin
+        cos
+        pow
+        arctan
+        arccos
+        deg2rad
+        rad2deg
+    reduce
+        sum
+        mean
+        max
+        min
+        argmax
+        std (-> sem)
+        ediff1d
+        polyval
+    io
+        loadtxt
+        savetxt
+        load
+        save
+    constants
+        pi
+        e
+    create arrays
+        array
+        linspace
+        arange
+        zeros
+        ones
     shape
-    sum
-    sqrt
-    mean
-    array
-    ndarray
-    exp
-    max
-    min
-    loadtxt
     isfinite
-    asscalar
     split
-    linspace
-    ediff1d
-    savetxt
-    arrange
-    log
-    polyval
-    pi
-    polyval
-    e
-    abs
-    fabs
-    ma
-        masked_array
-    save
-    abs
-    argmax
-    arrange
-    sin
-    cos
     vectorize
-    amax
-    load
-    save
-    radians
-    argmax
-    nan
-    std
-    isnan
-    pow
-    arctan
-    split
-    arccos
 
 scipy
     optimize
         curve_fit
     stats
         sem
-        linregress
     constants
-		physical_constants
+        physical_constants
         C2K
         K2C
-
-uncertainties
-    uarray
-    umath
-    ufloat
-    nominal_values
-    std_devs
 
 matplotlib
     plt
