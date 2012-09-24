@@ -11,21 +11,14 @@ Der Abschnitt \ref{install-test} gilt für alle Unix-artigen Betriebssysteme, al
 \subsubsection{Downloads}
 Ein Archiv mit den benötigten Installationsdateien kann unter \\
 \url{http://files.babushk.in/toolbox.zip} \\
-heruntergeladen werden.
+heruntergeladen werden.\\
+Zur Installation einfach die Installationsdateien nacheinander starten.
 
 \subsubsection{Git}
 \begin{itemize}
   \item \texttt{Git-1.7.11-preview20120710.exe}
   \item Pfad: \verb|C:\Programs\Git|
   \item Use a TrueType font in all console windows
-\end{itemize}
-
-\subsubsection{Make}
-Diese Dateien in \verb|C:\Programs\Git\bin| kopieren:
-\begin{itemize}
-  \item \texttt{make.exe}
-  \item \texttt{msys-iconv-2.dll}
-  \item \texttt{msys-intl-8.dll}
 \end{itemize}
 
 \subsubsection{KDiff3}
@@ -60,29 +53,13 @@ Diese Dateien in \verb|C:\Programs\Git\bin| kopieren:
 
 \subsubsection{Letzte Schritte}
 \begin{itemize}
-  \item Start $\rightarrow$ suche cmd.exe $\rightarrow$ Rechtsklick $\rightarrow$ Als Administrator ausführen
-  \item
+  \item Rechtsklick auf \texttt{install.bat} $\rightarrow$ Als Administrator ausführen
+  \item Git Bash starten und folgende Befehle eintippen (und dabei Name und Email eintragen):
 \begin{verbatim}
-setx /M PATH "C:\Programs\Python32;%PATH%"
-copy C:\Programs\Python32\python.exe C:\Programs\Python32\python3.exe
+git config --global user.email "XXX@udo.edu"
+git config --global user.name "XXX"
 \end{verbatim}
 \end{itemize}
-Jetzt müssen Git und Matplotlib noch eingestellt werden.
-In Git Bash ausführen (richtige Daten eintragen):
-\begin{verbatim}
-git config --global user.email "ismo.toijala@udo.edu"
-git config --global user.name "Ismo Toijala"
-mkdir -p ~/.matplotlib
-echo 'backend : Qt4Agg' > ~/.matplotlib/matplotlibrc
-echo "
-[merge]
-    tool = kdiff3
-    
-[mergetool "kdiff3"]
-    path = C:/Programs/KDiff3/kdiff3.exe
-    keepBackup = false
-    trustExitCode = false" >> ~/.gitconfig
-\end{verbatim}
 
 \subsubsection{Test}
 Jetzt kann man noch testen, ob alles vernünftig funktioniert:
@@ -118,7 +95,7 @@ Die benötigten Programme und Libraries kann man unter Ubuntu am schnellsten per
 \subsubsection{Git}
 Die Versionskontrolle 'Git' installiert man mit dem Befehl
 \begin{verbatim}
-sudo apt-get install make git kdiff3
+sudo apt-get install git kdiff3
 \end{verbatim}
 
 \subsubsection{Python und Bibliotheken}
@@ -141,17 +118,17 @@ sudo apt-get install python3-matplotlib
 
 \subsection{Arch Linux}
 \begin{verbatim}
-sudo pacman -S make git python python-numpy python-scipy \
+sudo pacman -S git python python-numpy python-scipy \
 ipython pyqt sip python-pygments python-pyzmq kdiff3
 yaourt -S python-matplotlib-git
 \end{verbatim}
 
 \subsection{Einstellungen und Testen}
 \label{install-test}
-Git und Matplotlib einstellen (richtige Daten eintragen):
+Git und Matplotlib einstellen (eigene Daten eintragen):
 \begin{verbatim}
-git config --global user.email "ismo.toijala@udo.edu"
-git config --global user.name "Ismo Toijala"
+git config --global user.email "XXX@udo.edu"
+git config --global user.name "XXX"
 mkdir -p ~/.matplotlib
 echo 'backend : Qt4Agg' > ~/.matplotlib/matplotlibrc
 echo "
