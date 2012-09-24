@@ -29,8 +29,9 @@ Besonders \texttt{git} hat sich in den letzten Jahren durchgesetzt.
 Es weist einige nützliche Vorteile auf:
 \begin{itemize}
   \item Es ist sehr schnell
-  \item Jeder Nutzer besitzt lokal die gesamte Vergangenheit des Projekts. (\textit{Distributed Version Control System}) \\
+  \item Jeder Nutzer besitzt lokal die gesamte Vergangenheit des Projekts. (\textit{Distributed Version Control System})
     So kann auch ohne Internetverbindung effektiv gearbeitet werden.
+  \item Das automatische Zusammenfügen mehrerer Änderungen (\textit{mergen}) ist sehr gut gelöst.
   \item Es existieren gute Online-Services, die \texttt{git} unterstützen.
 \end{itemize}
 
@@ -64,21 +65,81 @@ Es weist einige nützliche Vorteile auf:
 
 \section{Befehle}
 
-% TODO expand
-\begin{itemize}
-  \item \texttt{git init}
-  \item \texttt{git clone}
-  \item \texttt{git status}
-  \item \texttt{git add}
-  \item \texttt{git log}
-  \item \texttt{git mv}
-  \item \texttt{git rm}
-  \item \texttt{git commit}
-  \item \texttt{git push}
-  \item \texttt{git pull}
-  \item \texttt{git mergetool}
-  \item \texttt{.gitignore ???}
-\end{itemize}
+\subsection{\texttt{git init}}
+Mit diesem Befehl wird aus dem jetzigen Verzeichnis ein leeres Repository.
+Dateien, die eventuell schon vorhanden sind, müssen erst noch hinzugefügt werden.
+
+\subsection{\texttt{git clone}}
+Kopiert ein Repository (meist aus dem Internet).
+Als Parameter muss die URL des Repositories übergeben werden.
+Beispiel:
+\begin{verbatim}
+git clone http://github.com/user/repo
+\end{verbatim}
+
+\subsection{\texttt{git status}}
+Zeigt an, welche Dateien seit dem letzten Commit verändert wurden, welche neu hinzugekommen sind und welche bereits für den nächsten Commit vorbereitet wurden.
+
+\subsection{\texttt{git add}}
+Fügt eine Datei oder einen Ordner zum \textit{Index} hinzu. Das bedeutet, dass die Dateien beim nächsten Commit abgespeichert werden.
+Bei Ordnern werden auch alle Unterordner und Dateien darin hinzugefügt.
+Wenn man also
+\begin{verbatim}
+git add .
+\end{verbatim}
+im obersten Verzeichnis des Repositories aufruft, werden alle Dateien hinzugefügt.
+
+\subsection{\texttt{git log}}
+Zeigt alle Commits im Repository an.
+Man kann die Nachricht sehen, mit der sie gespeichert wurden, sowie wann und von wem sie erstellt wurden.
+Es gibt zahlreiche Optionen, mit denen man die Ausgabe anpassen kann.
+(siehe \verb|git help log|)
+
+\subsection{\texttt{git rm}, \texttt{git mv}}
+Wenn man Dateien löscht oder sie bewegt muss man git mitteilen, dass man die Datei (an der alten Stelle) tatsächlich löschen will.
+Das geht auch direkt in einem Schritt, wenn man \texttt{git rm} und \texttt{git mv} benutzt.
+
+\subsection{\texttt{git commit}}
+Speichert die Änderungen im Index als Commit ab.
+Öffnet auch einen Editor, damit man beschreiben kann, was man geändert hat.
+Meistens reicht es aber auch die Änderung mit dem Parameter \verb|-m| direkt einzugeben:
+\begin{verbatim}
+git commit -m "Ein paar Änderungen"
+\end{verbatim}
+Das geht schneller.
+
+\subsection{\texttt{git push}}
+Schickt die neuen Commits zu dem Repository, das man zu Anfang mit \verb|git clone| kopiert hat.
+Hat man das Repository ursprünglich mit \verb|git init| erstellt, so muss man erstmal ein Zielrepository einstellen:
+\begin{verbatim}
+git remote add --track master origin [URL]
+git push origin master
+\end{verbatim}
+Danach ist das Repository abgespeichert und man kann immer \verb|git push| benutzen.
+
+Wenn bereits ein Anderer neue Änderungen ins Repository hochgeladen hat, kommt eine Fehlermeldung.
+Nun muss man erst einmal \verb|git pull| benutzen (nächster Befehl) und sicherstellen, dass die Änderungen vernünftig zusammengefügt werden.
+Danach kann man das Ganze mit \verb|git push| hochladen.
+
+\subsection{\texttt{git pull}}
+Holt neue Änderungen aus dem Repository.
+Man kann sich dann mit \verb|git log| ansehen, was gemacht wurde.
+Hat man im eigenen Repository noch neue Änderungen, so wird \texttt{git} versuchen, diese automatisch mit den neuen zu mergen.
+
+\subsection{\texttt{git mergetool}}
+Wurde dabei dieselbe Zeile von mehreren Leuten geändert, so kommt es zu einem \verb|merge conflict|.
+Hierbei sollte man \verb|git mergetool| eingeben, woraufhin sich ein Programm öffnet mit dessen Hilfe man die kritischen Stellen finden und das Problem manuell beseitigen kann.
+Wer die Installationsanleitung befolgt hat, hat das Programm \verb|kdiff3| installiert, was genau dafür geschrieben wurde.
+Hinterher muss man noch \verb|git commit| eingeben, um den merge abzuschließen.
+
+\subsection{\texttt{.gitignore}}
+Wen es stört, dass Dateien, die man gar nicht im Repository haben will, ständig bei \verb|git status| angezeigt werden, kann die Datei \verb|.gitignore| im obersten Verzeichnis des Repositories erstellen.
+Darin kann man Regeln definieren, nach denen Dateien von \verb|git| ignoriert werden sollen:
+\begin{verbatim}
+*.pdf
+build/*
+\end{verbatim}
+In diesem Beispiel werden alle Dateien ignoriert, die auf \verb|.pdf| enden, oder die in einem Ordner mit dem Namen \verb|build| liegen.
 
 \section{Best Practices}
 
