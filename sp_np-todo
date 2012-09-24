@@ -47,8 +47,16 @@ uncertainties
 matplotlib
     ax
         plot
+        errorbar
         xaxis/yaxis
             set_view_intervall
             set_major_formatter
-            set_sx/ylabel
-            
+            set_ticks
+        axvline
+        axhline
+        legend
+        set_x/y_scale
+        set_x/y_label
+   fig
+        add_subplot
+        tight_layout
