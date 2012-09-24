@@ -5,15 +5,15 @@
 \end{center}
 
 \section{Warum Versionskontrolle?}
-Wissenschaftliche Projekte werden meist in Kollaboration mit anderen durchgeführt.
+Wissenschaftliche Projekte werden meist in Kollaboration durchgeführt.
 Die einzelnen Wissenschaftler arbeiten dabei oft an völlig verschiedenen Orten.
-Es müssen längere Dokumente verfasst werden, oft werden Programme entwickelt.
+Es müssen längere Dokumente verfasst werden; oft werden Programme entwickelt.
 Arbeit und Ergebnisse sollten klar protokolliert und reproduzierbar sein.
 Auch sollten stets Backups des Projekts existieren.
 
 Ein Versionskontroll-System ist ein Programm, das genau diese Aufgaben erfüllt.
 Das Konzept der Versionskontrolle kam ursprünglich in der Software-Entwicklung auf.
-Hier besteht wegen großer Teams und vielen Code-Zeilen ein besonderer Bedarf.
+Hier besteht wegen großer Teams und vieler Code-Zeilen ein besonderer Bedarf.
 
 Diese Programme können aber auch außerhalb der Software-Entwicklung effektiv eingesetzt werden.
 
@@ -21,11 +21,11 @@ Bekannte Versionskontroll-Systeme sind z.B.:
 \begin{itemize}
   \item CVS
   \item SVN
-  \item Mercurial
-  \item \textbf{Git}
+  \item Mercurial (\texttt{hg})
+  \item \textbf{\texttt{git}}
 \end{itemize}
 
-Besonders \texttt{git} hat sich in den letzten Jahren durchgesetzt.
+Besonders \texttt{git} setzt sich in den letzten Jahren immer mehr durch.
 Es weist einige nützliche Vorteile auf:
 \begin{itemize}
   \item Es ist sehr schnell
@@ -47,8 +47,33 @@ Es weist einige nützliche Vorteile auf:
 % - Sehr schnell
 % - Hat sich durchgesetzt
 
+\section{Überblick}
+
+% TODO Needs some pictures
+
+Git ist vorrangig ein Kommandozeilenprogramm.
+Es ist aber kein Problem wenn man die Kommandozeile lieber meidet: Es existieren zahlreiche grafische Oberflächen, die einem die tägliche Arbeit erleichtern können.
+Trotzdem sollte man zuerst die Kommandozeilen-Befehle lernen, da man so am schnellsten ein Gefühl für die Funktionsweise von \texttt{git} bekommt.
+Außerdem nutzen Beispiele und Erklärungen im Internet fast ausschließlich die Kommandozeilen-Syntax.
+
+Einige Begriffe sollten man kennen, bevor man sich mit den Befehlen vertraut macht:
+
+Ein \texttt{git}-Repository existiert innerhalb eines Verzeichnisses (dem \textit{Working directory}) im Dateisystem.
+Bis auf den Ordner \verb|.git| innerhalb dieses Verzeichnisses merkt man erst einmal nichts von \texttt{git}.
+
+Hat man einige Änderungen an seinem Projekt vorgenommen und möchte diese speichern oder mit anderen teilen, so fügt man sie mit einem Befehl zum sogenannten \textit{Index} hinzu.
+Ist man mit der Sammlung zufrieden, kann man sie als \textit{Commit} abspeichern.
+Dabei gibt man in der Regel eine kurze Erklärung, was am Projekt geändert wurde.
+(Mehrere Commits nacheinander bilden eine Kette)
+
+Man kann seine Commits anschließend hochladen.
+Interessant wird es, wenn man die Commits anderer herunterläd.
+Git fügt diese dann automatisch mit den eigenen zusammen.
+
 \section{Hosting}
 
+Es lohnt sich, ein Hauptrepository im Internet zu haben, auf das alle zugreifen können.
+Die bekanntesten \texttt{git}-Hoster sind 
 \begin{itemize}
   \item $
     \begin{array}{l}
@@ -59,15 +84,16 @@ Es weist einige nützliche Vorteile auf:
     \begin{array}{l}
       \includegraphics[height=18px]{img/bitbucket.png}
     \end{array} $ \textbf{Bitbucket}
-
-  \item \textbf{Eigenes Repository}
 \end{itemize}
+Github bietet kostenlose Repositories an, wenn man den Inhalt öffentlich macht.
+Bitbucket bietet zusätzlich auch kostenlose private Repositories an, die man nur mit einem Passwort einsehen kann.
+Wer einen eigenen Server besitzt kann \texttt{git} auch darauf einrichten.
+Hier empfiehlt es sich, \href{https://github.com/sitaramc/gitolite}{\texttt{gitolite}} zu benutzen.
 
 \section{Befehle}
 
 \subsection{\texttt{git init}}
 Mit diesem Befehl wird aus dem jetzigen Verzeichnis ein leeres Repository.
-Dateien, die eventuell schon vorhanden sind, müssen erst noch hinzugefügt werden.
 
 \subsection{\texttt{git clone}}
 Kopiert ein Repository (meist aus dem Internet).
@@ -97,7 +123,7 @@ Es gibt zahlreiche Optionen, mit denen man die Ausgabe anpassen kann.
 
 \subsection{\texttt{git rm}, \texttt{git mv}}
 Wenn man Dateien löscht oder sie bewegt muss man git mitteilen, dass man die Datei (an der alten Stelle) tatsächlich löschen will.
-Das geht auch direkt in einem Schritt, wenn man \texttt{git rm} und \texttt{git mv} benutzt.
+Das geht am Besten in einem Schritt, wenn man sofort \texttt{git rm} und \texttt{git mv} benutzt.
 
 \subsection{\texttt{git commit}}
 Speichert die Änderungen im Index als Commit ab.
@@ -148,7 +174,7 @@ Einige Punkte, die man bei der Benutzung von \texttt{git} beachten sollte:
   \item Automatisch generierte, sich oft ändernde Dateien sollten möglichst nicht im Repository gespeichert werden
     $\Rightarrow$ bläht sonst die Größe auf
   \item Git funktioniert am Besten mit reinen Text-Dateien (\LaTeX-Code, Programme, etc.).
-    Binäre Formate wie Word- oder Excel-Dateien können zwar auch abgespeichert werden, die Änderungen können aber nicht bequem eingesehen werden und die Größe des Repositories steigt unter Umständen an.
+    Binäre Formate wie Word- oder Excel-Dateien können zwar auch abgespeichert werden, das automatische Mergen funktioniert aber kaum, die Änderungen können nicht bequem eingesehen werden und die Größe des Repositories steigt unter Umständen an.
 \end{itemize}
 
 \section{Weiterführende Links}
@@ -156,6 +182,7 @@ Einige Punkte, die man bei der Benutzung von \texttt{git} beachten sollte:
   \item \texttt{man git}, \texttt{man gittutorial}
   \item Pro Git: \url{http://git-scm.com/book}
   \item Git - Documentation: \url{http://git-scm.com/doc}
-  \item Git Immersion: \url{http://http://gitimmersion.com/}
+  \item Git Immersion: \url{http://gitimmersion.com/}
   \item Easy Version Control with Git: \url{http://net.tutsplus.com/tutorials/other/easy-version-control-with-git/}
+  \item Git (Wikipedia): \url{http://en.wikipedia.org/wiki/Git_(software)}
 \end{itemize}
