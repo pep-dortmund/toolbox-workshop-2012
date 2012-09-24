@@ -13,20 +13,12 @@ Es gibt immer ein aktuelles Verzeichnis, in dem man sich befindet; dieses wird '
 Will man aus dem working directory in ein anderes Verzeichnis so kann man dies durch eine relative oder absolute Pfadangabe tuen.
 Bei einem absoluten Pfad geht man wieder von der Wurzel aus und beginnt ihn mit \texttt{/}.
 Wählt man den relativen Pfad, der oft kürzer ist, insbesondere wenn man einfach nur in den Über- oder Unterordner möchte, so baut man die Pfadangabe ausgehend vom aktuellen Verzeichnis auf.
-
-\begin{itemize}
-  \item \texttt{/} trennt Teile eines Pfads (Verzeichnisse und Dateien) (Windows: \texttt{\textbackslash})
-  \item Das gesamte Dateisystem bildet \emph{einen} Baum, beginnend mit der Wurzel \texttt{/}
-  \item Es gibt immer ein aktuelles Verzeichnis (working directory)
-  \item Pfade können absolut (beginnend mit \texttt{/}) oder relativ zum aktuellen Verzeichnis angegeben werden
-  \item drei spezielle Verzeichnisse:
+Bei der Pfadangabe sollte man im Übrigen folgende besondere Verzeichnisse kennen:
     \begin{itemize}
       \item \texttt{.} das aktuelle Verzeichnis (oder der aktuelle im bisherigen Pfad, \texttt{a/./}~=~\texttt{a/})
       \item \texttt{..} das Oberverzeichnis des aktuellen Verzeichnisses (\texttt{a/b/../}~=~\texttt{a/})
       \item \texttt{\textasciitilde} das Heimverzeichnis (nur am Anfang eines Pfads)
     \end{itemize}
-  \item Dateien, die mit \texttt{.} anfangen sind versteckt (z.B. \texttt{\textasciitilde/.vimrc}) und heißen Dotfiles
-\end{itemize}
 
 \section{Aufbau einer Eingabe}
 \texttt{\$ ls -l --all \textit{directory}\\
