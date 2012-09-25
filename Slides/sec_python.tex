@@ -64,21 +64,42 @@ print("Hello, World!")
 \end{frame}
 
 \subsection{Syntax}
-\begin{frame}[fragile]{Variablen, Operatoren}
-  \begin{exampleblock}{Variablen}
+\begin{frame}[fragile]{Variablen}
+  \begin{exampleblock}{Beispiel}
     \begin{minted}{python}
 a = 1
 b = 2
 name = "Kevin"
 print(a, b)
-print("Hello, %s!" % name)
+print(name)
     \end{minted}
   \end{exampleblock}
-  \begin{exampleblock}{Operatoren}
+\end{frame}
+
+\begin{frame}[fragile]{Operatoren}
+  \begin{block}{Arithmetische Operatoren}
   \begin{minted}{python}
-+ - * / % ** //
++, -, *, /, %, **, //
   \end{minted}
-  \end{exampleblock}
+  \end{block}
+  \begin{block}{Zuweisungsoperatoren}
+  \begin{minted}{python}
+=, +=, -=, *=, /=, %=, **=, //=
+  \end{minted}
+  \end{block}
+  \begin{block}{Vergleichsoperatoren}
+  \begin{minted}{python}
+==, !=, <, <=, >, >=
+  \end{minted}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Operatoren}
+  \begin{block}{Logische Operatoren}
+  \begin{minted}{python}
+and, or, not
+  \end{minted}
+  \end{block}
 \end{frame}
 
 \begin{frame}[fragile]{\texttt{(), [], \{\}}}
