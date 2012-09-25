@@ -5,29 +5,55 @@
                    subsubsectionstyle=show/show/show]
 \end{frame}
 
-\subsection{Warum}
-\begin{frame}{warum}
+\subsection{Warum Versionskontrolle?}
+\begin{frame}{Warum Versionskontrolle?}
 \end{frame}
 
 \subsection{Hoster}
-\begin{frame}{hoster}
+\begin{frame}{Hoster}
 \end{frame}
 
 \subsection{Befehle}
-\begin{frame}{init, clone}
+\begin{frame}{Repository erstellen}
+  \begin{itemize}
+    \item \texttt{git init}  Erzeugt ein leeres Repository im jetzigen Ordner.
+    \item \texttt{git clone [\textit{url}]} Kopiert ein Repository aus dem Internet
+  \end{itemize}
 \end{frame}
 
-\begin{frame}{status, log}
+\begin{frame}{Informationen abrufen}
+  \begin{itemize}
+    \item \texttt{git status} Zeigt an, welche Dateien geändert wurden und welche bereits im Index sind
+    \item \texttt{git log}    Zeigt alle gespeicherten Commits an
+  \end{itemize}
 \end{frame}
 
-\begin{frame}{add, mv, rm}
+\begin{frame}{Dateien zum Index hinzufügen}
+  \begin{itemize}
+    \item \texttt{git add} Fügt eine Datei oder einen Ordner (mit Inhalt) zum Index hinzu
+    \item \texttt{git rm}  Löscht eine Datei aus dem Ordner und schreibt die Löschung in den Index
+    \item \texttt{git mv}  Genauso, aber die Datei wird verschoben
+  \end{itemize}
 \end{frame}
 
-\begin{frame}{commit}
+\begin{frame}{Commits erstellen}
+  \begin{itemize}
+    \item \texttt{git commit} Speichert die Änderungen im Index als Commit ab
+  \end{itemize}
 \end{frame}
 
-\begin{frame}{push, pull}
+\begin{frame}{Änderungen runter-/hochladen}
+  \begin{itemize}
+    \item \texttt{git pull} Neue Commits runterladen\\
+                            Falls man noch neue lokale Commits hat führt git einen \textit{merge} durch
+    \item \texttt{git push} Neue Commits hochladen\\
+                            Geht nur, wenn keine neuen Commits im zentralen Repository sind\\
+                            Wenn ja, erst einmal \texttt{git pull} verwenden
+  \end{itemize}
 \end{frame}
 
-\begin{frame}{mergetool}
+\begin{frame}{Manuell mergen}
+  \begin{itemize}
+    \item \texttt{git mergetool} Startet ein Programm, mit dem man manuell mergen kann, falls die Automatik nicht funktioniert
+  \end{itemize}
 \end{frame}
