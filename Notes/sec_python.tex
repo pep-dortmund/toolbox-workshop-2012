@@ -60,7 +60,8 @@ Out[6]: 2
 Variablennamen können Buchstaben, Zahlen und Unterstrichte enthalten, dürfen jedoch nicht mit einer Ziffer beginnen.
 
 \subsection{Operatoren}
-Wie aus dem obigen Beispiel hervorgeht, gibt es in Python \textbf{mathematische Operatoren}. In \autoref{tab:op_mat} sind diese dargestellt.
+Wie aus dem obigen Beispiel hervorgeht, gibt es in Python \textbf{mathematische Operatoren}.
+In \autoref{tab:op_mat} sind diese dargestellt.
 
 \begin{table}[H]
   \centering{}
@@ -81,7 +82,8 @@ Wie aus dem obigen Beispiel hervorgeht, gibt es in Python \textbf{mathematische 
   \end{tabular}
 \end{table}
 
-\textbf{Zuweisungsoperatoren} setzen sich aus einem mathematischen Operator und einem Gleichheitszeichen zusammen. Mit ihnen kann gleichzeitig eine Berechnung und eine Zuweisung durchgeführt werden, zum Beispiel:
+\textbf{Zuweisungsoperatoren} setzen sich aus einem mathematischen Operator und einem Gleichheitszeichen zusammen.
+Mit ihnen kann gleichzeitig eine Berechnung und eine Zuweisung durchgeführt werden, zum Beispiel:
 \begin{verbatim}
 In [7]: a = 2
 
@@ -92,7 +94,6 @@ Out[8]: 6
 \end{verbatim}
 
 Mit Hilfe von \textbf{Vergleichsoperatoren} (siehe \autoref{tab:op_comp}) lassen sich Vergleiche durchführen.
-
 \begin{table}[H]
   \centering{}
   \caption{Vergleichsoperatoren}
@@ -113,7 +114,6 @@ Mit Hilfe von \textbf{Vergleichsoperatoren} (siehe \autoref{tab:op_comp}) lassen
 
 \subsection{Dateien}
  
-
 python
     open
     file
@@ -148,25 +148,23 @@ Einige davon sind
   \item Tools für Lineare Algebra, Fouriertransformation, Statistik
   \item beliebige eigene Datentypen können definiert werden
 \end{itemize}
-Wichtige Befehle sind
 
 \subsection{SciPy}
-SciPy ist ähnlich wie NumPy eine Bibliothek, die wissenschaftliches Arbeiten erleichtert.
-Insbesondere sind in dem Paket verschiedene Konstanten gespeichert, die im Praktikum oft gebraucht.
+SciPy ist, ähnlich wie NumPy, eine Bibliothek, die wissenschaftliches Arbeiten erleichtert.
+Insbesondere sind in dem Paket verschiedene Konstanten gespeichert, die im Praktikum oft gebraucht werden.
 SciPy ist eine Erweiterung von NumPy, die vor allem vom NumPy-Array profitiert.
 Es besitzt ebenfalls viele benutzerfreundliche und effiziente numerische Algorithmen für Integration und Optimierung.
-Wichtige Befehle dafür sind
-\subsection{Matplotlib}
-Bei Matplotlib handelt es ich um eine Bibliothek für 2D-Plots und kann in Python, iPython oder web application servers and diversen graphischen Benutzerinterfacetoolkits.
 
-
-\textit{matplotlib tries to make easy things easy and hard things possible}
-
-
-Es dient dazu Plots, auch polar Art, sowie Fehlerbalken und noch vieles mehr zu Plotten.
+\subsection{matplotlib}
+Bei matplotlib handelt es ich um eine Bibliothek für Plots.
+\begin{quote}
+  \textit{matplotlib tries to make easy things easy and hard things possible}
+\end{quote}
+Es dient dazu Plots, auch polare, sowie Fehlerbalken und noch vieles mehr zu Plotten.
 Es bietet sehr viele Einstellungsmöglichkeiten mit denen man den Plot anpassen kann.
-Matplotlib bietet eine objektorientierte API, die erlaubt die Plots in Anwendungen einzubetten die generische GUI-Toolkits wie Qt oder GTK benutzen.
-Es gibt ebenfalls pylab, dass ermöglicht auch ein Script zu schreiben um die Graphen zu erstellen.
+matplotlib bietet eine objektorientierte API, die erlaubt die Plots in Anwendungen einzubetten die generische GUI-Toolkits wie Qt oder GTK benutzen.
+Es gibt ebenfalls PyLab, das die verwendung in IPython erleichtert.
+
 \section{Python 2}
 Falls man Python 2 verwendet, sollte jede \texttt{.py}-Datei so anfangen:
 \begin{verbatim}
@@ -175,6 +173,7 @@ from __future__ import division, print_function, unicode_literals
 \end{verbatim}
 Dann funktionieren Division, \texttt{print} und Unicode wie in Python 3.
 Man sollte dann auch immer \texttt{python2} und \texttt{ipython2} aufrufen.
+
 \section{Weiterführende Links}
 \begin{itemize}
   \item Learn Python The Hard Way (Python 2): \url{http://learnpythonthehardway.org/}
@@ -182,11 +181,11 @@ Man sollte dann auch immer \texttt{python2} und \texttt{ipython2} aufrufen.
   \item Python v3 documentation: \url{http://docs.python.org/py3k/}
   \item Tentative NumPy Tutorial: \url{http://www.scipy.org/Tentative\_NumPy\_Tutorial}
   \item NumPy and SciPy Documentation: \url{http://docs.scipy.org/doc/}
-  \item Matplotlib Documentation: \url{http://matplotlib.org/1.2.0/contents.html}
-  \item Matplotlib Gallery: \url{http://matplotlib.org/1.2.0/gallery.html}
+  \item matplotlib Documentation: \url{http://matplotlib.org/1.2.0/contents.html}
+  \item matplotlib Gallery: \url{http://matplotlib.org/1.2.0/gallery.html}
   \item Python Uncertainties package: \url{http://packages.python.org/uncertainties/}
   \item SymPy: \url{http://sympy.org/en/index.html}
-  \item Matplotlib tutorial: \url{http://www.loria.fr/~rougier/teaching/matplotlib/}
+  \item matplotlib tutorial: \url{http://www.loria.fr/~rougier/teaching/matplotlib/}
   \item Python Scientific Lecture Notes: \url{http://scipy-lectures.github.com/}
   \item PyCon 2012: \url{http://pyvideo.org/category/17/pycon-us-2012}
     \begin{itemize}
@@ -198,8 +197,8 @@ Man sollte dann auch immer \texttt{python2} und \texttt{ipython2} aufrufen.
     \end{itemize}
   \item SciPy 2012: \url{http://pyvideo.org/category/20/scipy\_2012}
     \begin{itemize}
-      \item Introduction to NumPy and Matplotlib: \url{http://pyvideo.org/video/1190/introduction-to-numpy-and-matplotlib}
-      \item Advanced Matplotlib: \url{http://pyvideo.org/video/1344/advanced-matplotlib}
+      \item Introduction to NumPy and matplotlib: \url{http://pyvideo.org/video/1190/introduction-to-numpy-and-matplotlib}
+      \item Advanced matplotlib: \url{http://pyvideo.org/video/1344/advanced-matplotlib}
       \item IPython: tools for the entire lifecycle of research computing: \url{http://pyvideo.org/video/1221/ipython-tools-for-the-entire-lifecycle-of-resear}
       \item A tale of four libraries: \url{http://pyvideo.org/video/1211/a-tale-of-four-libraries}
     \end{itemize}
