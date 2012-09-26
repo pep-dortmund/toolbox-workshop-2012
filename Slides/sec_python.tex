@@ -69,7 +69,7 @@ print("Hello, World!")
   \begin{block}{Blöcke}
     \begin{itemize}
       \item Durch Einrückung!
-      \item 4 Leerzeichen
+      \item 4 Leerzeichen (/1 Tab)
     \end{itemize}
   \end{block}
   \begin{block}{Semikolons}
@@ -210,7 +210,45 @@ while condition:
     \end{minted}
   \end{block}
   \begin{block}{for}
+  \begin{itemize}
+   \item \texttt{for … in}
+   \item agiert immer auf \emph{Sequenzen}!
+  \end{itemize}
   \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{for - Beispiele}
+\vspace{-1em}
+\begin{spacing}{1.0}
+\begin{columns}
+    \begin{column}{0.4\paperwidth}
+      \begin{exampleblock}{Listen}
+        \begin{minted}{python}
+for city in cities:
+    print(city)
+    
+Dortmund
+Hamburg
+Berlin
+        \end{minted}
+      \end{exampleblock}
+    \end{column}
+    \begin{column}{.4\paperwidth}
+      \begin{exampleblock}{Range}
+        \begin{minted}{python}
+for i in range(0, 10):
+    print(i)
+    
+0
+1
+2
+3
+…
+        \end{minted}
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+\end{spacing}
 \end{frame}
 
 \begin{frame}{Funktionen}
