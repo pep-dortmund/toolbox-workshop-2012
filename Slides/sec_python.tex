@@ -251,10 +251,18 @@ for i in range(0, 10):
 \end{spacing}
 \end{frame}
 
-\begin{frame}{Funktionen}
-  \begin{block}{Aufrufe}
+\begin{frame}[fragile]{Funktionen}
+  \begin{block}{Aufruf}
+    \begin{itemize}
+      \item \texttt{print(something)}
+      \item \texttt{funktionsname(*args, **kwargs)}
+    \end{itemize}
   \end{block}
-  \begin{block}{def}
+  \begin{block}{Definition}
+    \begin{minted}{python}
+def funktionsname(param1, param2=defaultwert, ...):
+  # do something
+    \end{minted}
   \end{block}
 \end{frame}
 
