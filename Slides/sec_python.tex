@@ -273,6 +273,56 @@ for i in range(0, 10):
 \subsection{Bibliotheken}
 \subsubsection{NumPy}
 \begin{frame}{NumPy}
+  \begin{itemize}
+    \item $n$-dimensionale Arrays
+    \item Funktionen, die auf denen arbeiten
+    \item Operatoren wirken elementweise
+    \item wird meist mit \texttt{np} abgekürzt
+  \end{itemize}
+
+  Konstanten:
+  \begin{itemize}
+    \item \texttt{np.pi}
+    \item \texttt{np.e}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Arrays erstellen}
+  \begin{itemize}
+    \item \texttt{np.array}: konvertiert irgendwas (Liste, Tupel, …) zu einem Array
+    \item \texttt{np.linspace(start, end, number)}: \texttt{number} Zahlen zwischen \texttt{start} und \texttt{end} in gleichem Abstand
+    \item \texttt{np.arange(start, end, step)}: Zahlen zwischen \texttt{start} und \texttt{end} mit dem Abstand \texttt{step}
+    \item \texttt{np.zeros(shape)}: Array aus Nullen der Größe \texttt{shape}
+    \item \texttt{np.ones(shape)}: Array aus Einsen der Größe \texttt{shape}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Elementweise Funktionen}
+  Beispiele:
+  \begin{itemize}
+    \item \texttt{np.sqrt}
+    \item \texttt{np.exp}, \texttt{np.log}
+    \item \texttt{np.sin}
+    \item \texttt{np.deg2rad}, \texttt{rad2deg}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Reduzierende Funktionen}
+  Beispiele:
+  \begin{itemize}
+    \item \texttt{np.sum}
+    \item \texttt{np.mean}
+    \item \texttt{np.max}, \texttt{np.min}
+    \item \texttt{np.ediff1d}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Input/Output}
+  \begin{itemize}
+    \item \texttt{np.loadtxt(file [, unpack=True]}: Lädt eine Datei in ein Array.
+      \texttt{unpack=True} transponiert das Array
+    \item \texttt{np.savetxt(file, array)}: Speichert ein Array in eine Datei
+  \end{itemize}
 \end{frame}
 
 \subsubsection{SciPy}
