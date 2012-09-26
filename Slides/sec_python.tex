@@ -266,8 +266,19 @@ def funktionsname(param1, param2=defaultwert, ...):
   \end{block}
 \end{frame}
 
-\begin{frame}{Module}
-  import, from, as
+\begin{frame}[fragile]{Module}
+  \begin{itemize}
+    \item \texttt{import modulname}
+    \item \texttt{import modulname as alias}
+    \item \texttt{from modulname import teil}
+    \item \texttt{from modulname import *}
+  \end{itemize}
+  \begin{exampleblock}{Zum Beispiel}
+    \begin{minted}{python}
+import numpy as np
+a = np.array([1, 2, 3])
+    \end{minted}
+  \end{exampleblock}
 \end{frame}
 
 \begin{frame}[fragile]{Und ohne IPython?}
