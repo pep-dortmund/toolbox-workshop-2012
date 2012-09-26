@@ -4,8 +4,8 @@
   \textbf{\url{http://python.org}}
 \end{center}
 \begin{quote}
-    \textit{Python is a programming language that lets you work more quickly and integrate your systems more effectively.
-            You can learn to use Python and see almost immediate gains in productivity and lower maintenance costs.}
+  \textit{Python is a programming language that lets you work more quickly and integrate your systems more effectively.
+          You can learn to use Python and see almost immediate gains in productivity and lower maintenance costs.}
 \end{quote}
 
 \section{IPython}
@@ -169,6 +169,14 @@ python
   Es bietet sehr viele Einstellungsmöglichkeiten mit denen man den Plot anpassen kann.
   Matplotlib bietet eine objektorientierte API, die erlaubt die Plots in Anwendungen einzubetten die generische GUI-Toolkits wie Qt oder GTK benutzen.
   Es gibt ebenfalls pylab, dass ermöglicht auch ein Script zu schreiben um die Graphen zu erstellen.
+\section{Python 2}
+Falls man Python 2 verwendet, sollte jede \texttt{.py}-Datei so anfangen:
+\begin{verbatim}
+# coding=utf-8
+from __future__ import division, print_function, unicode_literals
+\end{verbatim}
+Dann funktionieren Division, \texttt{print} und Unicode wie in Python 3.
+Man sollte dann auch immer \texttt{python2} und \texttt{ipython2} aufrufen.
 \section{Weiterführende Links}
 \begin{itemize}
   \item Learn Python The Hard Way (Python 2): \url{http://learnpythonthehardway.org/}
