@@ -64,76 +64,182 @@ print("Hello, World!")
 \end{frame}
 
 \subsection{Syntax}
-\begin{frame}[fragile]{Variablen}
-  \begin{exampleblock}{Beispiel}
-    \begin{minted}{python}
-a = 1
-b = 2
-name = "Kevin"
-print(a, b)
-print(name)
-    \end{minted}
-  \end{exampleblock}
-\end{frame}
-
-\begin{frame}[fragile]{Operatoren}
-  \begin{block}{Arithmetische Operatoren}
-  \begin{minted}{python}
-+, -, *, /, %, **, //
-  \end{minted}
+\begin{frame}{Syntax}
+  \begin{block}{Blöcke}
+    \begin{itemize}
+      \item Durch Einrückung!
+      \item 4 Leerzeichen / 1 Tab
+    \end{itemize}
   \end{block}
-  \begin{block}{Zuweisungsoperatoren}
-  \begin{minted}{python}
-=, +=, -=, *=, /=, %=, **=, //=
-  \end{minted}
-  \end{block}
-  \begin{block}{Vergleichsoperatoren}
-  \begin{minted}{python}
-==, !=, <, <=, >, >=
-  \end{minted}
-  \end{block}
-\end{frame}
-
-\begin{frame}[fragile]{Operatoren}
-  \begin{block}{Logische Operatoren}
-  \begin{minted}{python}
-and, or, not
-  \end{minted}
-  \end{block}
-  \begin{block}{Außerdem}
-  \end{block}
-\end{frame}
-
-\begin{frame}[fragile]{\texttt{(), [], \{\}}}
+  \begin{block}{Semikolons}
   \begin{itemize}
-    \item[\texttt{()}] Tupel
-    \item[\texttt{[]}] Liste
-    \item[\texttt{\{\}}] Map 
+    \item Gibt es prinzipiell
+    \item Sind am Zeilenende aber nicht notwendig
   \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Variablen}
+  \begin{itemize}
+    \item Dynamische Typisierung
+    \item Keine explizite Deklaration 
+  \end{itemize}
+  \begin{spacing}{1.0}
+    \begin{exampleblock}{Beispiel}
+      \begin{minted}{python}
+In [1]: a = 1
+
+In [2]: b = 2
+
+In [3]: name = "Kääähbiiin"
+
+In [4]: a, b, name
+Out[4]: (1, 2, 'Kääähbiiin')
+      \end{minted}
+    \end{exampleblock}
+  \end{spacing}  
+\end{frame}
+
+\begin{frame}{Datenstrukturen}
+  \begin{itemize}
+    \item bool (\texttt{True}, \texttt{False})
+    \item int, float, long, complex
+    \item string (\texttt{'foo'}, \texttt{"bar"})
+    \item Iteratoren, Generatoren, Sequenzen…
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Datenstrukturen}
+  \begin{block}{Praktische Typen}
+    \begin{itemize}
+      \item[\texttt{()}] Tupel
+      \item[\texttt{[]}] Liste
+      \item[\texttt{\{\}}] Dictionary 
+    \end{itemize}
+  \end{block}
   \vspace{.5em}
   \begin{spacing}{1.0}
     \begin{exampleblock}{Zum Beispiel}
       \begin{minted}{python}
-a = (1, 2)
-b = [3, 6]
-c = {1: 2, 3: 100}
-print(a[0], b[0], c[1], c[3])
-# --> 1, 3, 2, 100
+In [9]: cities = ['Dortmund', 'Hamburg', 'Berlin']
+
+In [10]: cities[0]
+Out[10]: 'Dortmund'
       \end{minted}
     \end{exampleblock}
   \end{spacing}
 \end{frame}
 
-\begin{frame}{if, elif, else}
+\begin{frame}[fragile]{Mehr Beispiele}
+  \begin{minted}{python}
+In [1]: teams = {
+   ...:         'BVB': "BV Borussia Dortmund 09",
+   ...:         'S04': "FC Schalke 04",
+   ...:         'FCB': "FC Bayern München"
+   ...: }
+
+In [2]: teams['BVB']
+Out[2]: 'BV Borussia Dortmund 09'
+  \end{minted}
 \end{frame}
 
-\begin{frame}{for, while}
+\begin{frame}[fragile]{Operatoren}
+  \begin{spacing}{1.0}
+    \begin{block}{Arithmetische Operatoren}
+      \begin{minted}{python}
+  +, -, *, /, %, **, //
+      \end{minted}
+    \end{block}
+    \begin{block}{Zuweisungsoperatoren}
+      \begin{minted}{python}
+  =, +=, -=, *=, /=, %=, **=, //=
+      \end{minted}
+    \end{block}
+    \begin{block}{Vergleichsoperatoren}
+      \begin{minted}{python}
+  ==, !=, <, <=, >, >=
+      \end{minted}
+    \end{block}
+  \end{spacing}
 \end{frame}
 
-\begin{frame}{def, Funktionsaufrufe}
+\begin{frame}[fragile]{Operatoren}
+  \begin{spacing}{1.0}
+    \begin{block}{Logische Operatoren}
+      \begin{minted}{python}
+  and, or, not
+      \end{minted}
+    \end{block}
+    \begin{block}{Identitätsoperatoren}
+      \begin{minted}{python}
+  is, is not
+      \end{minted}
+    \end{block}
+    \begin{block}{Operatoren für Sequenzen}
+      \begin{minted}{python}
+  in, not in
+      \end{minted}
+    \end{block}
+  \end{spacing}
 \end{frame}
 
-\begin{frame}{import, from, as}
+\begin{frame}[fragile]{Kontrollstrukturen}
+  \begin{spacing}{1.0}
+    \begin{block}{if}
+      \begin{minted}{python}
+if condition:
+    # do something
+elif other_condition:
+    # or do something else
+else:
+    # or something else
+      \end{minted}
+    \end{block}
+    \begin{block}{case}
+    gibt es \emph{nicht}!
+    \end{block}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[fragile]{Schleifen}
+  \begin{block}{while}
+    \begin{minted}{python}
+while condition:
+    # do something
+    \end{minted}
+  \end{block}
+  \begin{block}{for}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Funktionen}
+\begin{block}{Aufrufe}
+\end{block}
+\begin{block}{def}
+\end{block}
+\end{frame}
+
+\begin{frame}{Module}
+import, from, as
+\end{frame}
+
+\begin{frame}[fragile]{Und ohne IPython?}
+\begin{itemize}
+  \item Dateiendung .py
+  \item Aufruf per \texttt{python dateiname.py}
+  \item Oder \texttt{chmod +x dateiname.py \&\& ./dateiname.py}
+  \item \texttt{print()}-Funktion 
+\end{itemize}
+  \begin{spacing}{1.0}
+    \begin{exampleblock}{Ein besseres "Hello, World!"}
+      \begin{minted}{python}
+#!/usr/bin/env python
+# coding=utf-8
+
+print("Hello, World!")
+      \end{minted}
+    \end{exampleblock}
+  \end{spacing}
 \end{frame}
 
 \subsection{Bibliotheken}
