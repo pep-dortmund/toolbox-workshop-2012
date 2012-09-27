@@ -96,3 +96,80 @@
     \item objektorientiertes Interface (Beschreibung im Skript) \mdash\ flexibler, schöner für größere Skripte oder Programme
   \end{itemize}
 \end{frame}
+
+\begin{frame}{Beispiele}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{img/matplotlib/hist.pdf}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Beispiele}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{img/matplotlib/errorbars.pdf}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Beispiele}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{img/matplotlib/finance.pdf}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Beispiele}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{img/matplotlib/polar.pdf}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Beispiele}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{img/matplotlib/tex.pdf}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Beispiele}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{img/matplotlib/mplot3d.pdf}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Plotten mit IPython}
+  Einfach \texttt{ipython3 --pylab} ausführen und z.B. Folgendes eintippen:
+\begin{minted}{python}
+  In [1]: x = linspace(0, 1, 100)
+  In [2]: plot(x, x**2, 'b-')
+\end{minted}
+  An dem Plot kann interaktiv weiter gearbeitet werden.
+\end{frame}
+
+\begin{frame}[fragile]{Plots in .py-Dateien erstellen}
+  In Code-Dateien muss man erst einmal die passenden Bibliotheken importieren.\\
+  Außerdem erscheint der Plot erst, wenn man \verb|show()| aufruft.
+\begin{minted}{python}
+from numpy import linspace, pi, sin
+import matplotlib.pyplot as plt
+x = linspace(0, 2 * pi, 1000)
+plt.plot(x, sin(x), 'r--')
+plt.show()
+# oder: plt.savefig('plot.pdf')
+\end{minted}
+\end{frame}
+
+\begin{frame}{Verschiedene Arten von Plots}
+  \begin{itemize}
+    \item \texttt{plot}
+    \item \texttt{errorbar} - Plot mit Fehlerbalken
+    \item \texttt{semilogy}, \texttt{semilogx} - logarithmische Skalierung
+    \item \texttt{hist} - Histogramme
+    \item Polare Plots funktionieren mit dem objektorientierten Interface.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Nützliche Funktionen}
+  \begin{itemize}
+    \item \texttt{title('...')}
+    \item \texttt{xlabel('...'), ylabel('...')}
+    \item \texttt{clf()}
+  \end{itemize}
+\end{frame}
+
