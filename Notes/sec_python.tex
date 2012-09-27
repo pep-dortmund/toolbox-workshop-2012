@@ -196,43 +196,7 @@ python
         int
         float
 
-\section{Bibliotheken}
-\subsection{NumPy}
-NumPy ist eine Bibliothek für Python, die diverse Features unterstützt, die wissenschaftliches Arbeiten deutlich erleichtern.
-Einige davon sind
-\begin{itemize}
-  \item ein $n$-dimensionales Array-Objekt
-  \item ausgeklügelte, durchdachte Funktionen für Optimierung, Integration und Interpolation
-  \item die Möglichkeit C/C++- und Fortran-Code zu integrieren
-  \item Tools für Lineare Algebra, Fouriertransformation, Statistik
-  \item beliebige eigene Datentypen können definiert werden
-\end{itemize}
-
-\subsection{SciPy}
-SciPy ist, ähnlich wie NumPy, eine Bibliothek, die wissenschaftliches Arbeiten erleichtert.
-Insbesondere sind in dem Paket verschiedene Konstanten gespeichert, die im Praktikum oft gebraucht werden.
-SciPy ist eine Erweiterung von NumPy, die vor allem vom NumPy-Array profitiert.
-Es besitzt ebenfalls viele benutzerfreundliche und effiziente numerische Algorithmen für Integration und Optimierung.
-
-\subsection{matplotlib}
-Bei matplotlib handelt es ich um eine Bibliothek für Plots.
-\begin{quote}
-  \textit{matplotlib tries to make easy things easy and hard things possible.}
-\end{quote}
-Es dient dazu Plots, auch polare, sowie Fehlerbalken und noch vieles mehr zu Plotten.
-Es bietet sehr viele Einstellungsmöglichkeiten mit denen man den Plot anpassen kann.
-matplotlib bietet eine objektorientierte API, die erlaubt die Plots in Anwendungen einzubetten die generische GUI-Toolkits wie Qt oder GTK benutzen.
-Es gibt ebenfalls PyLab, das die verwendung in IPython erleichtert.
-
-\subsubsection{Objektorientiertes Interface}
-\begin{figure}
-  \includegraphics[width=150px]{img/matplotlib_v.png}
-\end{figure}
-\begin{itemize}
-  \item figure: Leinwand, auf die Plots projiziert werden
-  \item axes: enthält Plot, der beliebig in der figure plaziert werden kann
-  \item axis: Koordinatenachsen 
-\end{itemize}
+\input{sec_libraries.tex}
 
 \section{Python 2}
 Falls man Python 2 verwendet, sollte jede \texttt{.py}-Datei so anfangen:

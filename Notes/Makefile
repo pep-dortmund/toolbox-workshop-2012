@@ -1,5 +1,5 @@
 
-notes.pdf: notes.tex header.tex sec_intro.tex sec_unix.tex sec_git.tex sec_python.tex sec_latex.tex
+notes.pdf: notes.tex header.tex sec_intro.tex sec_unix.tex sec_git.tex sec_python.tex sec_libraries.tex sec_latex.tex
 	lualatex --shell-escape notes.tex
 	lualatex --shell-escape notes.tex
 
