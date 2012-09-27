@@ -35,6 +35,16 @@ Um IPython zu beenden gibt es die Befehle \texttt{exit}, \texttt{exit()}, \textt
 \section{Syntax}
 Grundsätzlich ist die Python-Syntax sehr einfach und intuitiv.
 In vielen Punkten erinnert sie eher an eine Scriptsprache.
+
+\paragraph{Blöcke}
+Durch Einrückung!
+4 Leerzeichen (/1 Tab)
+
+\paragraph{Semikolons}
+Gibt es prinzipiell
+Sind am Zeilenende aber nicht notwendig
+
+\paragraph{???}
 In einer interaktiven Sitzung (z.B. IPython) können zum Einstieg einfache mathematische Berechnungen durchgeführt werden:
 \begin{verbatim}
 In [1]: 1 + 2
@@ -45,7 +55,10 @@ Out[2]: 2
 \end{verbatim}
 
 \subsection{Variablen}
-Natürlich gibt es Variablen. Ihre Verwendung ist denkbar einfach:
+Natürlich gibt es Variablen.
+Dynamische Typisierung
+Keine explizite Deklaration 
+Ihre Verwendung ist denkbar einfach:
 \begin{verbatim}
 In [3]: a = 2
 
@@ -58,6 +71,39 @@ In [6]: b
 Out[6]: 2
 \end{verbatim}
 Variablennamen können Buchstaben, Zahlen und Unterstrichte enthalten, dürfen jedoch nicht mit einer Ziffer beginnen.
+
+\subsection{Datenstrukturen/-typen}
+\begin{itemize}
+  \item bool (\texttt{True}, \texttt{False})
+  \item int, float, long, complex
+  \item string (\texttt{'foo'}, \texttt{"bar"})
+  \item Iteratoren, Generatoren, Sequenzen, …
+\end{itemize}
+\paragraph{Praktische Typen}
+\begin{itemize}
+  \item[\texttt{()}] Tupel
+  \item[\texttt{[]}] Liste
+  \item[\texttt{\{\}}] Dictionary 
+\end{itemize}
+\paragraph{Zum Beispiel}
+\begin{minted}{python}
+In [9]: cities = ['Dortmund', 'Hamburg', 'Berlin']
+
+In [10]: cities[0]
+Out[10]: 'Dortmund'
+\end{minted}
+\paragraph{Mehr Beispiele}
+\begin{minted}{python}
+In [1]: teams = {
+   ...:         'BVB': "BV Borussia Dortmund 09",
+   ...:         'S04': "FC Schalke 04",
+   ...:         'FCB': "FC Bayern München"
+   ...: }
+
+In [2]: teams['BVB']
+Out[2]: 'BV Borussia Dortmund 09'
+\end{minted}
+
 
 \subsection{Operatoren}
 Wie aus dem obigen Beispiel hervorgeht, gibt es in Python \textbf{mathematische Operatoren}.
@@ -112,8 +158,21 @@ Mit Hilfe von \textbf{Vergleichsoperatoren} (siehe \autoref{tab:op_comp}) lassen
   \end{tabular}
 \end{table}
 
-\subsection{Dateien}
- 
+\paragraph{Logische Operatoren}
+\begin{minted}{python}
+and, or, not
+\end{minted}
+\paragraph{Identitätsoperatoren}
+\begin{minted}{python}
+is, is not
+\end{minted}
+\paragraph{Operatoren für Sequenzen}
+\begin{minted}{python}
+in, not in
+\end{minted}
+
+
+\subsection{Dateien} 
 python
     open
     file
