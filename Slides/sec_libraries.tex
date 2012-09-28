@@ -143,8 +143,8 @@
 \end{frame}
 
 \begin{frame}[fragile]{Plots in .py-Dateien erstellen}
-  In Code-Dateien muss man erst einmal die passenden Bibliotheken importieren.\\
-  Außerdem erscheint der Plot erst, wenn man \verb|show()| aufruft.
+  Erst einmal Bibliotheken importieren.\\
+  Plot erscheint, wenn man \texttt{show()} aufruft.
 \begin{minted}{python}
 from numpy import linspace, pi, sin
 import matplotlib.pyplot as plt
@@ -170,9 +170,24 @@ plt.show()
     \item \texttt{title('...')}
     \item \texttt{xlabel('...'), ylabel('...')}
     \item \texttt{grid()}
-    \item \texttt{xlim()}, \texttt{ylim()}
-    \item \texttt{legend()}
+    \item \texttt{xlim(a, b)}, \texttt{ylim(a, b)}
+    \item \texttt{legend()} (beim Plot \texttt{label='...'} einstellen
     \item \texttt{clf()}
   \end{itemize}
 \end{frame}
 
+\begin{frame}{Matplotlib einstellen}
+  2 Möglichkeiten:
+  \begin{itemize}
+    \item direkt in der Code-Datei
+    \item Datei \texttt{matplotlibrc} im selben Ordner
+  \end{itemize}
+  $\Rightarrow$ siehe Dokumentation
+\end{frame}
+
+\begin{frame}{Beispiele und Aufgaben herunterladen}
+  Lade das Repository \\
+  \url{https//github.com/ibab/toolbox} \\
+  per \texttt{git clone} herunter.
+\end{frame}
+  
